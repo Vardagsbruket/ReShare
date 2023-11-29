@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "createdDate": "",
+      "postTitle": "Best tool ever",
+      "description": "Super duper good thing",
+      "contactInfo": "Call me here",
+      "city": "Stockholm",
+      "type": "Available",
+      "category": "Tools",
+      "img": ""
+    },
+    {
+      "id": 2,
+      "createdDate": "",
+      "postTitle": "clothes here ",
+      "description": "Clothes in good condition",
+      "contactInfo": "Call me here",
+      "city": "uppsala",
+      "type": "Available",
+      "category": "cloths",
+      "img": ""
+    },
+    {
+      "id": 3,
+      "createdDate": "",
+      "postTitle": "car to be borrowed",
+      "description": "I need a car for few hours",
+      "contactInfo": "Call me here",
+      "city": "Knivsta",
+      "type": "Needed",
+      "category": "Vehicle",
+      "img": ""
+    }
+  ]
+}
