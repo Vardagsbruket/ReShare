@@ -32,6 +32,26 @@
       "type": "Needed",
       "category": "Vehicle",
       "img": ""
+    },
+    {
+      "createdDate": 1701263696172,
+      "postTitle": "new post",
+      "description": "testing now",
+      "contactInfo": "123",
+      "type": "Give away",
+      "city": "Örebro",
+      "category": "Vechicles",
+      "id": 4
+    },
+    {
+      "createdDate": 1701265612400,
+      "postTitle": "shoes",
+      "description": "shoes availabe",
+      "contactInfo": "1234",
+      "type": "Give away",
+      "city": "Örebro",
+      "category": "Clothes & shoes",
+      "id": 5
     }
   ]
 }

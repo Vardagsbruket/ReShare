@@ -16,17 +16,48 @@ export const CreatePost = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        dispatch(createPost({
+        const newPost = {
+          createdDate: new Date().getTime(),
+          postTitle: title,
+          description: description,
+          contactInfo: contact,
+          type: type,
+          city: "Örebro",
+          category: category,
+        };
+      
+        fetch("http://localhost:6001/posts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify( {
             createdDate: new Date().getTime(),
-            postTitle:title,
-            description:description,
-            contactInfo:contact,
-            type:type,
+            postTitle: title,
+            description: description,
+            contactInfo: contact,
+            type: type,
             city: "Örebro",
-            category:category
-        }))
+            category: category,
+          } ),
+        }).then(()=> {
+            console.log("new post created");
+        });
+      };
+      
 
-    }
+        // }
+        // dispatch(createPost({
+        //     createdDate: new Date().getTime(),
+        //     postTitle:title,
+        //     description:description,
+        //     contactInfo:contact,
+        //     type:type,
+        //     city: "Örebro",
+        //     category:category
+        // }))
+       
+    
   return (
     <form onSubmit={handleFormSubmit}>
         <label htmlFor="postTitle">Title for product:</label>

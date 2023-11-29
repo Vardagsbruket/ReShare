@@ -46,6 +46,7 @@ const posts = createSlice({
         console.log(action);
         state.isLoading = false;
       });
+ 
   },
 });
 export const { createPost } = posts.actions;
