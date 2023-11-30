@@ -1,13 +1,9 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-
+import { ListPosts } from "../components/ListPosts";
 
 export const StartPage = () => {
-  
-
-  const postList = useSelector((state) => state.posts.postsList);
-  console.log(postList);
-  return <div>Start Page
-    
-  </div>;
+  return (
+    <>
+      <ListPosts />
+    </>
+  );
 };
