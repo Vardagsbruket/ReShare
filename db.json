@@ -72,6 +72,28 @@
       "city": "Örebro",
       "category": "Furniture",
       "id": 7
+    },
+    {
+      "createdDate": 1701347115784,
+      "postTitle": "ColorPalette",
+      "description": "You can borrow my nice color palette",
+      "contactInfo": "Call me",
+      "type": "",
+      "city": "Örebro",
+      "category": "Clothes & shoes",
+      "img": {},
+      "id": 8
+    },
+    {
+      "createdDate": 1701347431045,
+      "postTitle": "ColorPalette",
+      "description": "You can borrow my nice color palette",
+      "contactInfo": "Call me",
+      "type": "",
+      "city": "Örebro",
+      "category": "Clothes & shoes",
+      "img": {},
+      "id": 9
     }
   ]
 }
