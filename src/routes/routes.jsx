@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { BrowsePage } from "../pages/BrowsePage";
 import { StartHomePage } from "../pages/StartHomePage";
 import { PublishPostPage } from "../pages/PublishPostPage";
-import { DetailPage } from "../pages/detailPage";
+import { DetailPage } from "../pages/DetailPage";
 
 const routes = (
   <Routes>
