@@ -37,7 +37,6 @@ const posts = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // When the getCartItems thunk is in a pending state (meaning the asynchronous operation is ongoing), this case sets the isLoading state to true to indicate that the data is currently being fetched.
       .addCase(getPostsList.pending, (state) => {
         state.isLoading = true;
       })

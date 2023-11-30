@@ -1,20 +1,26 @@
-import React from "react";
+import "./Header.css";
 import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   return (
     <>
-      <div>
+      <div className="header">
         <div>
-          <NavLink to="/">ReShare</NavLink>
+          <NavLink to="/" className="navLink">
+            <h1>ReShare</h1>
+          </NavLink>
         </div>
-        <div>
+        <div className="navBar">
           <ul>
             <li>
-              <NavLink to="/browse-posts">Browse Posts</NavLink>
+              <NavLink to="/browse-posts" className="navLink">
+                Browse Posts
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/create-post">Create Post</NavLink>
+              <NavLink to="/create-post" className="navLink">
+                Create Post
+              </NavLink>
             </li>
           </ul>
         </div>
