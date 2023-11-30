@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { FacebookShareButton, FacebookIcon } from "react-share";
 
 export const Footer = () => {
   return (
@@ -8,6 +9,14 @@ export const Footer = () => {
         <a href="https://github.com/joona-3">Joona Miettinen</a> and{" "}
         <a href="https://github.com/Vardagsbruket">Diana Undén</a>{" "}
       </p>
+      <div className="socialMedia">
+        <p>Share this page on social media </p>
+        <FacebookShareButton
+          url={`https://stirring-florentine-c4bb3f.netlify.app/`}
+        >
+          <FacebookIcon size={32} round />
+        </FacebookShareButton>
+      </div>
     </div>
   );
 };
