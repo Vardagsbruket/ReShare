@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./CreatePost.css";
+
 
 export const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -7,7 +7,9 @@ export const CreatePost = () => {
   const [contact, setContact] = useState(null);
   const [category, setCategory] = useState("");
   const [type, setType] = useState("");
-  const [image, setImage] = useState(null);
+//   const [image, setImage] = useState(null);
+
+
 
   const createNewPost = async () => {
     try {
@@ -24,7 +26,7 @@ export const CreatePost = () => {
           type: type,
           city: "Örebro",
           category: category,
-          img: image,
+        //   img:image
         }),
       });
 
@@ -50,59 +52,43 @@ export const CreatePost = () => {
   };
 
   return (
-    <div className="createPostForm">
-      <form onSubmit={handleFormSubmit}>
-        <div>
-          <label htmlFor="postTitle">Title for product:</label>
-          <input
-            type="text"
-            id="postTitle"
-            onChange={(e) => setTitle(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="description">Description:</label>
-          <textarea
-            id="description"
-            onChange={(e) => setDescription(e.target.value)}
-          ></textarea>
-        </div>
-        <div>
-          <label htmlFor="contactInfo">Contact:</label>
-          <input
-            type="text"
-            id="contactInfo"
-            onChange={(e) => setContact(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="type">Borrow, lend or give away?</label>
-          <select id="type" onChange={(e) => setType(e.target.value)}>
-            <option value="Borrow">Borrow</option>
-            <option value="Lender">Lender</option>
-            <option value="Give away">Give away</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="category">Select category</label>
-          <select id="category" onChange={(e) => setCategory(e.target.value)}>
-            <option value="Vechicles">Vechicles</option>
-            <option value="Furniture">Furniture</option>
-            <option value="Clothes & shoes">Clothes & shoes</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="image">Upload Image:</label>
-          <input
-            type="file"
-            id="image"
-            onChange={(e) => setImage(e.target.files[0])}
-          />{" "}
-        </div>
-        <div>
-          <input type="submit" value="Create post" />
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleFormSubmit}>
+      <label htmlFor="postTitle">Title for product:</label>
+      <input
+        type="text"
+        id="postTitle"
+        onChange={(e) => setTitle(e.target.value)}
+      ></input>
+
+      <label htmlFor="description">Description:</label>
+      <textarea
+        id="description"
+        onChange={(e) => setDescription(e.target.value)}
+      ></textarea>
+
+      <label htmlFor="contactInfo">Contact:</label>
+      <input
+        type="text"
+        id="contactInfo"
+        onChange={(e) => setContact(e.target.value)}
+      ></input>
+
+      <label htmlFor="type">Borrow, lend or give away?</label>
+      <select id="type" onChange={(e) => setType(e.target.value)}>
+        <option value="Borrow">Borrow</option>
+        <option value="Lender">Lender</option>
+        <option value="Give away">Give away</option>
+      </select>
+
+      <label htmlFor="category"></label>
+      <select id="category" onChange={(e) => setCategory(e.target.value)}>
+        <option value="Vechicles">Vechicles</option>
+        <option value="Furniture">Furniture</option>
+        <option value="Clothes & shoes">Clothes & shoes</option>
+      </select>
+      {/* { <label htmlFor="image">Upload Image:</label>
+      <input type="file" id="image" onChange={(e)=> setImage(e.target.files[0])} /> */}
+      <input type="submit" value="Create post" /> 
+    </form>
   );
 };
