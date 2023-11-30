@@ -1,5 +1,3 @@
-import React from "react";
-import { DetailPost } from "../components/DetailPost";
 import { NavLink, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 

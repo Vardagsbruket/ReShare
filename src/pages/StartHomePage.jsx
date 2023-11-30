@@ -1,6 +1,6 @@
 import { ListPosts } from "../components/ListPosts";
 
-export const StartPage = () => {
+export const StartHomePage = () => {
   return (
     <>
       <ListPosts />
