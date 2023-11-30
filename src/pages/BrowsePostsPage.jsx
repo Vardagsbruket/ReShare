@@ -1,3 +1,4 @@
+import { FilterPosts } from "../components/FilterPosts";
 import { ListPosts } from "../components/ListPosts";
 
 export const BrowsePostsPage = () => {
@@ -7,7 +8,7 @@ export const BrowsePostsPage = () => {
         <h2>Browse Posts</h2>
       </div>
       <div>
-        <h3>Filter component</h3>
+       <FilterPosts />
       </div>
       <ListPosts />
     </>

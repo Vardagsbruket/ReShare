@@ -8,7 +8,7 @@
       "contactInfo": "Call me here",
       "city": "Stockholm",
       "type": "Available",
-      "category": "Tools",
+      "category": "Tools & machines",
       "img": ""
     },
     {
@@ -19,7 +19,7 @@
       "contactInfo": "Call me here",
       "city": "uppsala",
       "type": "Available",
-      "category": "cloths",
+      "category": "Clothes & shoes",
       "img": ""
     },
     {
@@ -30,7 +30,7 @@
       "contactInfo": "Call me here",
       "city": "Knivsta",
       "type": "Needed",
-      "category": "Vehicle",
+      "category": "Vehicles",
       "img": ""
     },
     {
@@ -40,7 +40,7 @@
       "contactInfo": "123",
       "type": "Give away",
       "city": "Örebro",
-      "category": "Vechicles",
+      "category": "Vehicles",
       "id": 4
     },
     {

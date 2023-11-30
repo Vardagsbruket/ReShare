@@ -2,6 +2,8 @@ import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   postsList: [],
+  selectedCategory : "all",
+  selectedType:undefined,
   isLoading : false
 };
 export const getPostsList = createAsyncThunk("posts/getPostsList", async (payload, thunkAPI) => {
@@ -23,6 +25,9 @@ const posts = createSlice({
   name: "posts",
   initialState,
   reducers: {
+    setCategory:(state,action) => {
+      state.selectedCategory = action.payload;
+    }
     
   },
   extraReducers: (builder) => {
@@ -45,5 +50,5 @@ const posts = createSlice({
  
   },
 });
-export const {  } = posts.actions;
+export const { setCategory } = posts.actions;
 export default posts.reducer;
