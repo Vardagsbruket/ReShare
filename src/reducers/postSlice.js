@@ -1,40 +1,39 @@
-import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   postsList: [],
-  isLoading : false
+  isLoading: false,
 };
-export const getPostsList = createAsyncThunk("posts/getPostsList", async (payload, thunkAPI) => {
-  try {
-    const response = await fetch("http://localhost:6001/posts");
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
+export const getPostsList = createAsyncThunk(
+  "posts/getPostsList",
+  async (payload, thunkAPI) => {
+    try {
+      const response = await fetch("http://localhost:6001/posts");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
 
-    const data = await response.json();
-    console.log(data);
-    return data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue("something went wrong");
+      const data = await response.json();
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue("something went wrong");
+    }
   }
-});
+);
 
 const posts = createSlice({
   name: "posts",
   initialState,
-  reducers: {
-    
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      // When the getCartItems thunk is in a pending state (meaning the asynchronous operation is ongoing), this case sets the isLoading state to true to indicate that the data is currently being fetched.
       .addCase(getPostsList.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getPostsList.fulfilled, (state, action) => {
-       
         state.isLoading = false;
-        console.log("in extra reducer",action.payload);
+        console.log("in extra reducer", action.payload);
         state.postsList = action.payload;
       })
       .addCase(getPostsList.rejected, (state, action) => {
@@ -42,8 +41,7 @@ const posts = createSlice({
         console.log(action);
         state.isLoading = false;
       });
- 
   },
 });
-export const {  } = posts.actions;
+export const {} = posts.actions;
 export default posts.reducer;

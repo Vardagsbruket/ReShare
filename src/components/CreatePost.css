@@ -1,0 +1,4 @@
+.createPostForm {
+  display: flex;
+  flex-direction: column;
+}
