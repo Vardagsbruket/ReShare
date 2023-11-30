@@ -52,6 +52,26 @@
       "city": "Örebro",
       "category": "Clothes & shoes",
       "id": 5
+    },
+    {
+      "createdDate": 1701266523807,
+      "postTitle": "tesing again",
+      "description": "testing again",
+      "contactInfo": "2345",
+      "type": "",
+      "city": "Örebro",
+      "category": "Furniture",
+      "id": 6
+    },
+    {
+      "createdDate": 1701333294206,
+      "postTitle": "cc",
+      "description": "vv",
+      "contactInfo": "1123",
+      "type": "Lender",
+      "city": "Örebro",
+      "category": "Furniture",
+      "id": 7
     }
   ]
 }

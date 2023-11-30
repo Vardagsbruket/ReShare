@@ -7,5 +7,7 @@ export const StartPage = () => {
 
   const postList = useSelector((state) => state.posts.postsList);
   console.log(postList);
-  return <div>Start Page</div>;
+  return <div>Start Page
+    
+  </div>;
 };

@@ -19,15 +19,11 @@ export const getPostsList = createAsyncThunk("posts/getPostsList", async (payloa
   }
 });
 
-
-
 const posts = createSlice({
   name: "posts",
   initialState,
   reducers: {
-    createPost: (state, action) => {
-      state.postsList.push(action.payload);
-    },
+    
   },
   extraReducers: (builder) => {
     builder
@@ -49,5 +45,5 @@ const posts = createSlice({
  
   },
 });
-export const { createPost } = posts.actions;
+export const {  } = posts.actions;
 export default posts.reducer;
