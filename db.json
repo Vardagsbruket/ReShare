@@ -32,6 +32,46 @@
       "type": "Needed",
       "category": "Vehicle",
       "img": ""
+    },
+    {
+      "createdDate": 1701263696172,
+      "postTitle": "new post",
+      "description": "testing now",
+      "contactInfo": "123",
+      "type": "Give away",
+      "city": "Örebro",
+      "category": "Vechicles",
+      "id": 4
+    },
+    {
+      "createdDate": 1701265612400,
+      "postTitle": "shoes",
+      "description": "shoes availabe",
+      "contactInfo": "1234",
+      "type": "Give away",
+      "city": "Örebro",
+      "category": "Clothes & shoes",
+      "id": 5
+    },
+    {
+      "createdDate": 1701266523807,
+      "postTitle": "tesing again",
+      "description": "testing again",
+      "contactInfo": "2345",
+      "type": "",
+      "city": "Örebro",
+      "category": "Furniture",
+      "id": 6
+    },
+    {
+      "createdDate": 1701333294206,
+      "postTitle": "cc",
+      "description": "vv",
+      "contactInfo": "1123",
+      "type": "Lender",
+      "city": "Örebro",
+      "category": "Furniture",
+      "id": 7
     }
   ]
 }
