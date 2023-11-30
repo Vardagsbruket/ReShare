@@ -58,7 +58,7 @@
       "postTitle": "tesing again",
       "description": "testing again",
       "contactInfo": "2345",
-      "type": "",
+      "type": "Needed",
       "city": "Örebro",
       "category": "Furniture",
       "id": 6
@@ -68,7 +68,7 @@
       "postTitle": "cc",
       "description": "vv",
       "contactInfo": "1123",
-      "type": "Lender",
+      "type": "Needed",
       "city": "Örebro",
       "category": "Furniture",
       "id": 7

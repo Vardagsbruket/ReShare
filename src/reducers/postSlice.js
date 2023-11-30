@@ -1,34 +1,39 @@
-import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   postsList: [],
-  selectedCategory : "all",
-  selectedType:undefined,
-  isLoading : false
+  selectedCategory: "all",
+  selectedType: "all",
+  isLoading: false,
 };
-export const getPostsList = createAsyncThunk("posts/getPostsList", async (payload, thunkAPI) => {
-  try {
-    const response = await fetch("http://localhost:6001/posts");
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
+export const getPostsList = createAsyncThunk(
+  "posts/getPostsList",
+  async (payload, thunkAPI) => {
+    try {
+      const response = await fetch("http://localhost:6001/posts");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
 
-    const data = await response.json();
-    console.log(data);
-    return data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue("something went wrong");
+      const data = await response.json();
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue("something went wrong");
+    }
   }
-});
+);
 
 const posts = createSlice({
   name: "posts",
   initialState,
   reducers: {
-    setCategory:(state,action) => {
+    setCategory: (state, action) => {
       state.selectedCategory = action.payload;
-    }
-    
+    },
+    setType: (state, action) => {
+      state.selectedType = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -37,9 +42,8 @@ const posts = createSlice({
         state.isLoading = true;
       })
       .addCase(getPostsList.fulfilled, (state, action) => {
-       
         state.isLoading = false;
-        console.log("in extra reducer",action.payload);
+        console.log("in extra reducer", action.payload);
         state.postsList = action.payload;
       })
       .addCase(getPostsList.rejected, (state, action) => {
@@ -47,8 +51,7 @@ const posts = createSlice({
         console.log(action);
         state.isLoading = false;
       });
- 
   },
 });
-export const { setCategory } = posts.actions;
+export const { setCategory, setType } = posts.actions;
 export default posts.reducer;

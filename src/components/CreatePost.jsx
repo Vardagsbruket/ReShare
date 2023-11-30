@@ -1,15 +1,12 @@
 import { useState } from "react";
 
-
 export const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [contact, setContact] = useState(null);
   const [category, setCategory] = useState("");
   const [type, setType] = useState("");
-//   const [image, setImage] = useState(null);
-
-
+  //   const [image, setImage] = useState(null);
 
   const createNewPost = async () => {
     try {
@@ -26,7 +23,7 @@ export const CreatePost = () => {
           type: type,
           city: "Örebro",
           category: category,
-        //   img:image
+          //   img:image
         }),
       });
 
@@ -74,8 +71,8 @@ export const CreatePost = () => {
 
       <label htmlFor="type">Borrow, lend or give away?</label>
       <select id="type" onChange={(e) => setType(e.target.value)}>
-        <option value="Borrow">Borrow</option>
-        <option value="Lender">Lender</option>
+        <option value="Needed">Needed</option>
+        <option value="Available">Available</option>
         <option value="Give away">Give away</option>
       </select>
 
@@ -87,7 +84,7 @@ export const CreatePost = () => {
       </select>
       {/* { <label htmlFor="image">Upload Image:</label>
       <input type="file" id="image" onChange={(e)=> setImage(e.target.files[0])} /> */}
-      <input type="submit" value="Create post" /> 
+      <input type="submit" value="Create post" />
     </form>
   );
 };

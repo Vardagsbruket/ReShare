@@ -8,7 +8,7 @@ export const BrowsePostsPage = () => {
         <h2>Browse Posts</h2>
       </div>
       <div>
-       <FilterPosts />
+        <FilterPosts />
       </div>
       <ListPosts />
     </>
