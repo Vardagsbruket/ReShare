@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { FacebookShareButton, FacebookIcon } from "react-share";
 
 export const DetailPost = () => {
   const { postId } = useParams();
@@ -19,7 +20,11 @@ export const DetailPost = () => {
             </p>
           </div>
         </div>
-        <p></p>
+        <div>
+          <FacebookShareButton url={`/post/${post.id}/`}>
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
+        </div>
       </div>
     </>
   );

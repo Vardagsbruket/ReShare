@@ -1,5 +1,6 @@
 import { NavLink, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { FacebookShareButton, FacebookIcon } from "react-share";
 
 export const DetailPage = () => {
   const { postId } = useParams();
@@ -24,6 +25,11 @@ export const DetailPage = () => {
               <p>{post.city}</p>
               <p>{post.contactInfo}</p>
               <p>{post.createdDate}</p>
+            </div>
+            <div>
+              <FacebookShareButton url={`/post/${postId}/`}>
+                <FacebookIcon size={32} round />
+              </FacebookShareButton>
             </div>
           </div>
         </div>
