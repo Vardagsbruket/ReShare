@@ -1,7 +1,7 @@
 import { FilterPosts } from "../components/FilterPosts";
 import { ListPosts } from "../components/ListPosts";
 
-export const BrowsePostsPage = () => {
+export const BrowsePage = () => {
   return (
     <>
       <div>
