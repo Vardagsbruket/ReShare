@@ -124,6 +124,26 @@
       "city": "Örebro",
       "category": "Clothes & shoes",
       "id": 12
+    },
+    {
+      "createdDate": 1701434537881,
+      "postTitle": "Borrow my pulka",
+      "description": "Pulka for kids, ready to use",
+      "contactInfo": "Call me",
+      "type": "Available",
+      "city": "",
+      "category": "Sports & hobby",
+      "id": 13
+    },
+    {
+      "createdDate": 1701435019338,
+      "postTitle": "Borrow my skies",
+      "description": "Size 38 in shoes",
+      "contactInfo": "Call me",
+      "type": "Available",
+      "city": "Västerås",
+      "category": "Sports & hobby",
+      "id": 14
     }
   ]
 }
