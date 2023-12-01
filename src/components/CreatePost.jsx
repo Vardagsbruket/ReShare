@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./CreatePost.css"
+import "./CreatePost.css";
 
 export const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -7,9 +7,7 @@ export const CreatePost = () => {
   const [contact, setContact] = useState(null);
   const [category, setCategory] = useState("");
   const [type, setType] = useState("");
-//   const [image, setImage] = useState(null);
-
-
+  //   const [image, setImage] = useState(null);
 
   const createNewPost = async () => {
     try {
@@ -26,7 +24,7 @@ export const CreatePost = () => {
           type: type,
           city: "Örebro",
           category: category,
-        //   img:image
+          //   img:image
         }),
       });
 
@@ -46,7 +44,7 @@ export const CreatePost = () => {
       type: type,
       city: "Örebro",
       category: category,
-      img: image,
+      //img: image,
     };
     createNewPost();
   };
@@ -88,7 +86,7 @@ export const CreatePost = () => {
       </select>
       {/* { <label htmlFor="image">Upload Image:</label>
       <input type="file" id="image" onChange={(e)=> setImage(e.target.files[0])} /> */}
-      <input type="submit" value="Create post" /> 
+      <input type="submit" value="Create post" />
     </form>
   );
 };

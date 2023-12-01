@@ -28,7 +28,7 @@ export const FilterPosts = () => {
 
   return (
     <div>
-      <lable htmlFor="type">Choose type</lable>
+      <label htmlFor="type">Choose type</label>
       <select onChange={handleType}>
         <option value={type}>{type}</option>
         {typeList.map((type, index) => (
