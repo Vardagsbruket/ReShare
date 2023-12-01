@@ -1,14 +1,16 @@
 import { useState } from "react";
 import "./CreatePost.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getPostsList } from "../reducers/postSlice";
 
 export const CreatePost = () => {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [contact, setContact] = useState(null);
   const [category, setCategory] = useState("");
   const [type, setType] = useState("");
-  const [city,setCity] = useState("");
+  const [city, setCity] = useState("");
   const categoryList = useSelector((state) => state.posts.categoryList);
   const cityList = useSelector((state) => state.posts.cityList);
   //   const [image, setImage] = useState(null);
@@ -51,6 +53,8 @@ export const CreatePost = () => {
       //img: image,
     };
     createNewPost();
+
+    dispatch(getPostsList());
   };
 
   return (
