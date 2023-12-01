@@ -1,38 +1,49 @@
 import { NavLink, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FacebookShareButton, FacebookIcon } from "react-share";
+import { getPostsList } from "../reducers/postSlice";
+import { useEffect, useState } from "react";
 
 export const DetailPage = () => {
+  const [isFetched, setIsFetched] = useState(false);
+  const [post, setPost] = useState(null);
+
   const { postId } = useParams();
   const postList = useSelector((state) => state.posts.postsList);
-  const post = postList.find((post) => post.id === parseInt(postId));
-  console.log("post id:", postId);
-  console.log("post found", post);
+
+  useEffect(() => {
+    const fetchList = async () => {
+      setIsFetched(false);
+      const foundPost = await postList.find((post) => post.id === parseInt(postId));
+      setPost(foundPost);
+      setIsFetched(true);
+    };
+
+    fetchList();
+  }, [postId, postList]);
+
   return (
     <>
       <div className="detail-post-container">
         <NavLink to={-1}>
           <button>Go Back</button>
         </NavLink>
-        <div>
-          <img src="" alt="" />
-          <div className="detail-post-wrapper">
-            <p>{post.type}</p>
-            <h2>{post.postTitle}</h2>
-            <p>{post.category}</p>
-            <div>
-              <p>{post.description}</p>
-              <p>{post.city}</p>
-              <p>{post.contactInfo}</p>
-              <p>{post.createdDate}</p>
+        {isFetched && post && (
+          <div>
+            <img src="" alt="" />
+            <div className="detail-post-wrapper">
+              <p>{post.type}</p>
+              <h2>{post.postTitle}</h2>
+              <p>{post.category}</p>
+              <div>
+                <p>{post.description}</p>
+                <p>{post.city}</p>
+                <p>{post.contactInfo}</p>
+                <p>{post.createdDate}</p>
+              </div>
             </div>
-            {/* <div>
-              <FacebookShareButton url={`/post/${postId}/`}>
-                <FacebookIcon size={32} round />
-              </FacebookShareButton>
-            </div> */}
           </div>
-        </div>
+        )}
         <p></p>
       </div>
     </>

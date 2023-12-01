@@ -9,7 +9,7 @@ export const ListPosts = () => {
   const postList = useSelector((state) => state.posts.postsList);
   const category = useSelector((state) => state.posts.selectedCategory);
   const type = useSelector((state) => state.posts.selectedType);
-  
+  console.log("in browse posts", postList);
 
   useEffect(() => {
     let allfilteredPosts;
