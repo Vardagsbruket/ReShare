@@ -94,7 +94,7 @@ export const CreatePost = () => {
       </select>
       <label htmlFor="category">Select city</label>
       <select id="category" onChange={(e) => setCity(e.target.value)}>
-        {cityList.map((city, index) => (
+        {cityList.slice(1).map((city, index) => (
           <option key={index}>{city}</option>
         ))}
       </select>

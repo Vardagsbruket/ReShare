@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   cityList:[
+    "all",
     "Stockholm",
     "Göteborg",
     "Kista",
