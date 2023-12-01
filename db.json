@@ -94,6 +94,36 @@
       "category": "Clothes & shoes",
       "img": {},
       "id": 9
+    },
+    {
+      "createdDate": 1701419500235,
+      "postTitle": "Old guitarr",
+      "description": "",
+      "contactInfo": null,
+      "type": "Lender",
+      "city": "Örebro",
+      "category": "Clothes & shoes",
+      "id": 10
+    },
+    {
+      "createdDate": 1701420297844,
+      "postTitle": "Test post again",
+      "description": "",
+      "contactInfo": "Call me",
+      "type": "Lender",
+      "city": "Örebro",
+      "category": "Clothes & shoes",
+      "id": 11
+    },
+    {
+      "createdDate": 1701421942886,
+      "postTitle": "New shoes to give away",
+      "description": "",
+      "contactInfo": null,
+      "type": "Give away",
+      "city": "Örebro",
+      "category": "Clothes & shoes",
+      "id": 12
     }
   ]
 }

@@ -26,11 +26,11 @@ export const DetailPage = () => {
               <p>{post.contactInfo}</p>
               <p>{post.createdDate}</p>
             </div>
-            <div>
+            {/* <div>
               <FacebookShareButton url={`/post/${postId}/`}>
                 <FacebookIcon size={32} round />
               </FacebookShareButton>
-            </div>
+            </div> */}
           </div>
         </div>
         <p></p>

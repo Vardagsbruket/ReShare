@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { FacebookShareButton, FacebookIcon } from "react-share";
+//import { FacebookShareButton, FacebookIcon } from "react-share";
 
 export const DetailPost = () => {
   const { postId } = useParams();
   const postList = useSelector((state) => state.posts.postsList);
-  const post = postList.find((post) => post.id === postId);
+  const post = postList.find((post) => post.id === parseInt(postId));
   console.log("post id:", postId);
   console.log("post found", post);
+
   return (
     <>
       <div>
@@ -20,11 +21,11 @@ export const DetailPost = () => {
             </p>
           </div>
         </div>
-        <div>
+        {/* <div>
           <FacebookShareButton url={`/post/${post.id}/`}>
             <FacebookIcon size={32} round />
           </FacebookShareButton>
-        </div>
+        </div> */}
       </div>
     </>
   );
