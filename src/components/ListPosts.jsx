@@ -9,32 +9,27 @@ export const ListPosts = () => {
   const postList = useSelector((state) => state.posts.postsList);
   const category = useSelector((state) => state.posts.selectedCategory);
   const type = useSelector((state) => state.posts.selectedType);
+  const city = useSelector((state) => state.posts.selectedCity);
 
   useEffect(() => {
-    let allfilteredPosts;
-
-    if (category !== "all" && type === "all") {
-      allfilteredPosts = postList.filter((post) => post.category === category);
-      setFilteredPosts(allfilteredPosts);
-    } else if (type !== "all" && category === "all") {
-      allfilteredPosts = postList.filter((post) => post.type === type);
-      setFilteredPosts(allfilteredPosts);
-    } else if (category !== "all" && type !== "all") {
-      allfilteredPosts = postList.filter(
-        (post) => post.category === category && post.type === type
+    const filterFunction = (post) => {
+      return (
+        (category === "all" || post.category === category) &&
+        (type === "all" || post.type === type) &&
+        (city === "all" || post.city === city)
       );
-      setFilteredPosts(allfilteredPosts);
-    } else {
-      setFilteredPosts(postList);
-    }
-  }, [category, type, postList]);
+    };
+
+    const allfilteredPosts = postList.filter(filterFunction);
+    setFilteredPosts(allfilteredPosts);
+  }, [category, type, city, postList]);
 
   return (
     <>
-    <section className="list-post-container">
-      {filteredPosts.map((post) => (
-        <CardPost key={post.id} post={post} />
-      ))}
+      <section className="list-post-container">
+        {filteredPosts.map((post) => (
+          <CardPost key={post.id} post={post} />
+        ))}
       </section>
     </>
   );

@@ -4,7 +4,15 @@ import { setCity } from '../reducers/postSlice';
 
 export const FilterCity = () => {
 
-    const cityList =  useSelector((state) =>state.posts.cityList);
+  // const cityList = useSelector((state) => {
+  //   const cities = state.posts.cityList;
+  //   if (!cities.includes("all")) {
+  //     return ["all", ...cities];
+  //   }
+  //   return cities;
+  // });
+
+  const cityList = useSelector((state) => state.posts.cityList);
     const selectedCity = useSelector((state) => state.posts.selectedCity);
     const dispatch = useDispatch();
     const handleSelect = (e) => {
@@ -12,11 +20,12 @@ export const FilterCity = () => {
     }
 
   return (
-    <div> <label htmlFor="city">Select a city to view location-based posts</label>
+    <div> <label htmlFor="city">Select a city </label>
     <select id="city" onChange={handleSelect}>
-      <option value="all">all</option>
+      <option value="selectedCity">{selectedCity}</option>
       {cityList.map((city,index) => (
-        <option key={index}>{city}</option>
+        city !==  selectedCity ?
+        <option key={index}>{city}</option> : ""
       ))}
      
     </select></div>
