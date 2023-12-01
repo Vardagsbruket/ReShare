@@ -48,7 +48,7 @@ export const CreatePost = () => {
       description: description,
       contactInfo: contact,
       type: type,
-      city: "Örebro",
+      city:city ,
       category: category,
       //img: image,
     };
@@ -81,6 +81,7 @@ export const CreatePost = () => {
 
       <label htmlFor="type">Borrow, lend or give away?</label>
       <select id="type" onChange={(e) => setType(e.target.value)}>
+      <option value="">choose one type</option>
         <option value="Needed">Needed</option>
         <option value="Available">Available</option>
         <option value="Give away">Give away</option>

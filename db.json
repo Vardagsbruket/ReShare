@@ -166,6 +166,26 @@
       "type": "Needed",
       "category": "Vehicles",
       "img": ""
+    },
+    {
+      "createdDate": 1701465382243,
+      "postTitle": "tools needed urgently",
+      "description": "anyone willing to lend tools for a day",
+      "contactInfo": "2689",
+      "type": "Needed",
+      "city": "Stockholm",
+      "category": "Tools & machines",
+      "id": 17
+    },
+    {
+      "createdDate": 1701465754663,
+      "postTitle": "baby seat",
+      "description": "baby seat needed for weekend",
+      "contactInfo": "56777",
+      "type": "Needed",
+      "city": "",
+      "category": "Tools & machines",
+      "id": 18
     }
   ]
 }
