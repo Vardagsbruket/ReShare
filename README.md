@@ -17,7 +17,8 @@ npm install json-server concurrently
  "server": "json-server --watch db.json --port 6001",
  "devserver": "concurrently \"npm run server\" \"npm run dev\""
  }
-
+### for social media install
+ npm install react-share 
 
 #### how to use it
 npm run devserver

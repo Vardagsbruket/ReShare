@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./CreatePost.css";
+import { useSelector } from "react-redux";
 
 export const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -7,6 +8,9 @@ export const CreatePost = () => {
   const [contact, setContact] = useState(null);
   const [category, setCategory] = useState("");
   const [type, setType] = useState("");
+  const [city,setCity] = useState("");
+  const categoryList = useSelector((state) => state.posts.categoryList);
+  const cityList = useSelector((state) => state.posts.cityList);
   //   const [image, setImage] = useState(null);
 
   const createNewPost = async () => {
@@ -22,7 +26,7 @@ export const CreatePost = () => {
           description: description,
           contactInfo: contact,
           type: type,
-          city: "Örebro",
+          city: city,
           category: category,
           //   img:image
         }),
@@ -73,16 +77,22 @@ export const CreatePost = () => {
 
       <label htmlFor="type">Borrow, lend or give away?</label>
       <select id="type" onChange={(e) => setType(e.target.value)}>
-        <option value="Borrow">Borrow</option>
-        <option value="Lender">Lender</option>
+        <option value="Needed">Needed</option>
+        <option value="Available">Available</option>
         <option value="Give away">Give away</option>
       </select>
 
       <label htmlFor="category">Categories</label>
       <select id="category" onChange={(e) => setCategory(e.target.value)}>
-        <option value="Vechicles">Vechicles</option>
-        <option value="Furniture">Furniture</option>
-        <option value="Clothes & shoes">Clothes & shoes</option>
+        {categoryList.map((category, index) => (
+          <option key={index}>{category}</option>
+        ))}
+      </select>
+      <label htmlFor="category">Select city</label>
+      <select id="category" onChange={(e) => setCity(e.target.value)}>
+        {cityList.map((city, index) => (
+          <option key={index}>{city}</option>
+        ))}
       </select>
       {/* { <label htmlFor="image">Upload Image:</label>
       <input type="file" id="image" onChange={(e)=> setImage(e.target.files[0])} /> */}

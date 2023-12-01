@@ -1,11 +1,11 @@
 import { Hero } from "../components/Hero";
-import { ListPosts } from "../components/ListPosts";
+import { StartPagePosts } from "../components/StartPagePosts";
 
 export const StartHomePage = () => {
   return (
     <>
       <Hero />
-      <ListPosts />
+      <StartPagePosts />
     </>
   );
 };
