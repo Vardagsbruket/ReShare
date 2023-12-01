@@ -6,19 +6,8 @@ export const FilterPosts = () => {
   const type = useSelector((state) => state.posts.selectedType);
   const category = useSelector((state) => state.posts.selectedCategory);
   const dispatch = useDispatch();
-  const categoryList = [
-    "Vehicles",
-    "Furniture",
-    "Toys",
-    "clothes & shoes",
-    "Tools & machines",
-    "interior",
-    "Sports & hobby",
-    "Kitchen appliances",
-    "Garden",
-    "Other",
-  ];
-  const typeList = ["Available", "Give away", "Needed"];
+  const categoryList = useSelector((state.posts.categoryList));
+  const typeList = ["all","Available", "Give away", "Needed"];
   const handleCategory = (e) => {
     dispatch(setCategory(e.target.value));
   };
@@ -30,7 +19,7 @@ export const FilterPosts = () => {
     <div>
       <lable htmlFor="type">Choose type</lable>
       <select onChange={handleType}>
-        <option value={type}>{type}</option>
+        {/* <option value={type}>{type}</option> */}
         {typeList.map((type, index) => (
           <option key={index} value={type}>
             {type}
@@ -40,7 +29,7 @@ export const FilterPosts = () => {
 
       <label htmlFor="category">choose category</label>
       <select onChange={handleCategory}>
-        <option value={category}>{category}</option>
+        {/* <option value={category}>{category}</option> */}
         {categoryList.map((category, index) => (
           <option key={index} value={category}>
             {category}
