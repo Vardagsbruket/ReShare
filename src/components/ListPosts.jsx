@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { CardPost } from "./CardPost";
 import { useEffect, useState } from "react";
+import "./Listposts.css";
 
 export const ListPosts = () => {
   const [filteredPosts, setFilteredPosts] = useState([]);
@@ -30,9 +31,11 @@ export const ListPosts = () => {
 
   return (
     <>
+    <section className="list-post-container">
       {filteredPosts.map((post) => (
         <CardPost key={post.id} post={post} />
       ))}
+      </section>
     </>
   );
 };

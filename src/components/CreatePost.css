@@ -1,4 +1,12 @@
-.createPostForm {
+.create-post-form {
   display: flex;
   flex-direction: column;
+  max-width: 400px;
+  margin: 2rem auto;
+  text-align: start;
+
+}
+
+.create-post-form input, select,textarea {
+ margin-bottom: 1rem;
 }

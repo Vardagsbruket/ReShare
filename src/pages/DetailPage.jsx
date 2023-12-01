@@ -10,13 +10,13 @@ export const DetailPage = () => {
   console.log("post found", post);
   return (
     <>
-      <div>
+      <div className="detail-post-container">
         <NavLink to={-1}>
           <button>Go Back</button>
         </NavLink>
         <div>
           <img src="" alt="" />
-          <div>
+          <div className="detail-post-wrapper">
             <p>{post.type}</p>
             <h2>{post.postTitle}</h2>
             <p>{post.category}</p>

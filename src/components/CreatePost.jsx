@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./CreatePost.css"
 
 export const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -52,7 +52,7 @@ export const CreatePost = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form className="create-post-form" onSubmit={handleFormSubmit}>
       <label htmlFor="postTitle">Title for product:</label>
       <input
         type="text"
@@ -80,7 +80,7 @@ export const CreatePost = () => {
         <option value="Give away">Give away</option>
       </select>
 
-      <label htmlFor="category"></label>
+      <label htmlFor="category">Categories</label>
       <select id="category" onChange={(e) => setCategory(e.target.value)}>
         <option value="Vechicles">Vechicles</option>
         <option value="Furniture">Furniture</option>
