@@ -48,7 +48,7 @@ export const CreatePost = () => {
       type: type,
       city: "Örebro",
       category: category,
-      img: image,
+      //img: image,
     };
     createNewPost();
   };
