@@ -59,7 +59,7 @@
       "description": "testing again",
       "contactInfo": "2345",
       "type": "Needed",
-      "city": "Örebro",
+      "city": "Stockholm",
       "category": "Furniture",
       "id": 6
     },
@@ -131,7 +131,7 @@
       "description": "Pulka for kids, ready to use",
       "contactInfo": "Call me",
       "type": "Available",
-      "city": "",
+      "city": "Kista",
       "category": "Sports & hobby",
       "id": 13
     },
@@ -144,6 +144,28 @@
       "city": "Västerås",
       "category": "Sports & hobby",
       "id": 14
+    },
+    {
+      "id": 15,
+      "createdDate": "",
+      "postTitle": "car to be borrowed",
+      "description": "I need a car for few hours",
+      "contactInfo": "Call me here",
+      "city": "Kista",
+      "type": "Needed",
+      "category": "Vehicles",
+      "img": ""
+    },
+    {
+      "id": 16,
+      "createdDate": "",
+      "postTitle": "car to be borrowed",
+      "description": "I need a car for few hours",
+      "contactInfo": "Call me here",
+      "city": "Stockholm",
+      "type": "Needed",
+      "category": "Vehicles",
+      "img": ""
     }
   ]
 }

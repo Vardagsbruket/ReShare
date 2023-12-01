@@ -12,7 +12,7 @@ export const FilterCity = () => {
     }
 
   return (
-    <div> <label htmlFor="city">Select a city to view location-based posts</label>
+    <div> <label htmlFor="city">Select a city </label>
     <select id="city" onChange={handleSelect}>
       <option value="all">all</option>
       {cityList.map((city,index) => (
