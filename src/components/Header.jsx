@@ -22,6 +22,11 @@ export const Header = () => {
                 Create Post
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/about" className="navLink">
+                About
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
