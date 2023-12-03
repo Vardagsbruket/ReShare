@@ -186,6 +186,16 @@
       "city": "",
       "category": "Tools & machines",
       "id": 18
+    },
+    {
+      "createdDate": 1701631794083,
+      "postTitle": "Childrens clothes, size 110",
+      "description": "A bag of second hand clothes in size 110. Good used condition.",
+      "contactInfo": "Call me",
+      "type": "Give away",
+      "city": "Malmö",
+      "category": "clothes & shoes",
+      "id": 19
     }
   ]
 }
