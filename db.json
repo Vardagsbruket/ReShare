@@ -183,11 +183,12 @@
       "description": "baby seat needed for weekend",
       "contactInfo": "56777",
       "type": "Needed",
-      "city": "",
+      "city": "Stockholm",
       "category": "Tools & machines",
       "id": 18
     },
     {
+
       "createdDate": 1701631794083,
       "postTitle": "Childrens clothes, size 110",
       "description": "A bag of second hand clothes in size 110. Good used condition.",
@@ -206,7 +207,7 @@
       "city": "Linköping",
       "category": "Tools & machines",
       "id": 20
-<<<<<<< HEAD
+
     },
     {
       "createdDate": 1701691778582,
@@ -217,8 +218,27 @@
       "city": "Göteborg",
       "category": "Furniture",
       "id": 21
-=======
->>>>>>> main
+    },
+    {
+
+      "createdDate": 1701466247791,
+      "postTitle": "testing again",
+      "description": "testing again",
+      "contactInfo": "r444",
+      "type": "Available",
+      "city": "Uppsala",
+      "category": "Kitchen appliances",
+      "id": 19
+    },
+    {
+      "postTitle": "testing 2",
+      "description": "test",
+      "contactInfo": "4456",
+      "category": "Garden",
+      "type": "Needed",
+      "city": "Uppsala",
+      "createdDate": null,
+      "id": 20
     }
   ]
 }
