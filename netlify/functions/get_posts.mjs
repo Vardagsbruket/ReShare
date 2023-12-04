@@ -19,7 +19,7 @@ export default async (req, context) => {
       process.env.MONGODB_COLLECTION
     );
     console.time("connected to db. finding...");
-    const results = await collection.find({}).limit(10).toArray();
+    const results = await collection.find({}).toArray();
     console.timeEnd("connected to db. finding...");
     console.log(results);
     const test = new Response(JSON.stringify(results), {

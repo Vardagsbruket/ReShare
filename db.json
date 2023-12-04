@@ -206,6 +206,19 @@
       "city": "Linköping",
       "category": "Tools & machines",
       "id": 20
+<<<<<<< HEAD
+    },
+    {
+      "createdDate": 1701691778582,
+      "postTitle": "Bookshelf",
+      "description": "Big bookshelf, made from wood and painted grey.",
+      "contactInfo": "Call me",
+      "type": "Give away",
+      "city": "Göteborg",
+      "category": "Furniture",
+      "id": 21
+=======
+>>>>>>> main
     }
   ]
 }
