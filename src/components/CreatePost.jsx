@@ -3,7 +3,10 @@ import "./CreatePost.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getPostsList } from "../reducers/postSlice";
 
+
 export const CreatePost = () => {
+  const isLoggedIn = useSelector((state) => state.posts.isLoggedIn);
+  const userId = useSelector((state) => state.posts.userId);
   const dispatch = useDispatch();
   const initialState = {
     postTitle: "",
@@ -12,6 +15,7 @@ export const CreatePost = () => {
     category: "",
     type: "",
     city: "",
+    userId:userId,
     createdDate:null
   };
   
@@ -21,43 +25,35 @@ export const CreatePost = () => {
   //   const [image, setImage] = useState(null);
 
   const createNewPost = async () => {
-    // try {
-    //   await fetch("http://localhost:6001/posts", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       createdDate: new Date().getTime(),
-    //       postTitle: title,
-    //       description: description,
-    //       contactInfo: contact,
-    //       type: type,
-    //       city: city,
-    //       category: category,
-    //       //   img:image
-    //     }),
-    //   });
-    
     try {
-      const url = "/.netlify/functions/create_post";
-      const response = await fetch(url, {
+      await fetch("http://localhost:6001/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(
-          newPost
-        ),
+        body: JSON.stringify(newPost),
       });
+   
 
-      const data = await response.json();
-      console.log(data);
-      console.log("New post created");
+  //   try {
+  //     const url = "/.netlify/functions/create_post";
+  //     const response = await fetch(url, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(
+  //         newPost
+  //       ),
+  //     });
+
+  //     const data = await response.json();
+  //     console.log(data);
+  //     console.log("New post created");
     } catch (error) {
       console.error("Error creating new post:", error);
     }
-  };
+  }
   const handleChange = (key, value) => {
     setNewPost({ ...newPost, [key]: value });
   };
@@ -68,10 +64,17 @@ export const CreatePost = () => {
     setNewPost((prev) => ({ ...prev, createdDate: new Date().getTime() }));
     await createNewPost();
     setNewPost(prevState => ({ ...prevState, ...initialState }));
-    console.log("....", newPost);
     dispatch(getPostsList());
   };
 
+if(!isLoggedIn) {
+return (
+  <div>
+    <p>Login to create a post</p>
+  </div>
+
+);
+}
   return (
     <form className="create-post-form" onSubmit={handleFormSubmit}>
       <label htmlFor="postTitle">Title for product:</label>
@@ -110,6 +113,7 @@ export const CreatePost = () => {
       </select>
       <label htmlFor="category">Select city</label>
       <select id="category" onChange={(e) => handleChange("city",e.target.value)}>
+      <option value="">choose a city</option>
         {cityList.slice(1).map((city, index) => (
           <option key={index}>{city}</option>
         ))}
