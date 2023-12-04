@@ -16,8 +16,26 @@ export const CreatePost = () => {
   //   const [image, setImage] = useState(null);
 
   const createNewPost = async () => {
+    // try {
+    //   await fetch("http://localhost:6001/posts", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       createdDate: new Date().getTime(),
+    //       postTitle: title,
+    //       description: description,
+    //       contactInfo: contact,
+    //       type: type,
+    //       city: city,
+    //       category: category,
+    //       //   img:image
+    //     }),
+    //   });
     try {
-      await fetch("http://localhost:6001/posts", {
+      const url = "/.netlify/functions/create_post";
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,6 +52,8 @@ export const CreatePost = () => {
         }),
       });
 
+      const data = await response.json();
+      console.log(data);
       console.log("New post created");
     } catch (error) {
       console.error("Error creating new post:", error);
@@ -48,7 +68,7 @@ export const CreatePost = () => {
       description: description,
       contactInfo: contact,
       type: type,
-      city:city ,
+      city: city,
       category: category,
       //img: image,
     };
@@ -81,7 +101,7 @@ export const CreatePost = () => {
 
       <label htmlFor="type">Borrow, lend or give away?</label>
       <select id="type" onChange={(e) => setType(e.target.value)}>
-      <option value="">choose one type</option>
+        <option value="">choose one type</option>
         <option value="Needed">Needed</option>
         <option value="Available">Available</option>
         <option value="Give away">Give away</option>

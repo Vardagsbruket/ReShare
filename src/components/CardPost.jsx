@@ -6,7 +6,7 @@ export const CardPost = ({ post }) => {
     <>
       <div className="cardPost">
         <div>
-          <Link to={`/post/${post.id}`}>
+          <Link to={`/post/${post._id}`}>
             <img src="" alt="" />
             <div>
               <h2>{post.postTitle}</h2>
