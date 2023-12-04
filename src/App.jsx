@@ -7,13 +7,14 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import routes from "./routes/routes";
 import { useDispatch } from "react-redux";
-import { getPostsList } from "./reducers/postSlice";
+import { getPostsList, getUsersList } from "./reducers/postSlice";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getPostsList());
+    dispatch(getUsersList());
   }, []);
   return (
     <>

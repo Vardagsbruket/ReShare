@@ -38,6 +38,7 @@ export const CreatePost = () => {
     //       //   img:image
     //     }),
     //   });
+    
     try {
       const url = "/.netlify/functions/create_post";
       const response = await fetch(url, {

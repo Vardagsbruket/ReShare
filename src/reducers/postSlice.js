@@ -29,50 +29,70 @@ const initialState = {
     "Other",
   ],
   postsList: [],
+  usersList : [],
   selectedCategory: "all",
   selectedType: "all",
   selectedCity: "all",
+  isLoggedIn: false,
+  userId: null,
   isLoading: false,
 };
-// export const getPostsList = createAsyncThunk(
-//   "posts/getPostsList",
-//   async (payload, thunkAPI) => {
-//     try {
-//       const response = await fetch("http://localhost:6001/posts");
-//       if (!response.ok) {
-//         throw new Error("Network response was not ok");
-//       }
-
-//       const data = await response.json();
-//       console.log(data);
-//       return data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue("something went wrong");
-//     }
-//   }
-// );
 export const getPostsList = createAsyncThunk(
   "posts/getPostsList",
   async (payload, thunkAPI) => {
     try {
-      const response = await fetch("/.netlify/functions/get_posts", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch("http://localhost:6001/posts");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
       const data = await response.json();
-      console.log("get_posts data : ", data);
+      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue("something went wrong");
     }
   }
 );
+export const getUsersList = createAsyncThunk(
+  "posts/getUsersList",
+  async (payload, thunkAPI) => {
+    try {
+      const response = await fetch("http://localhost:6001/users");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.json();
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue("something went wrong");
+    }
+  }
+);
+// export const getPostsList = createAsyncThunk(
+//   "posts/getPostsList",
+//   async (payload, thunkAPI) => {
+//     try {
+//       const response = await fetch("/.netlify/functions/get_posts", {
+//         method: "GET",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       });
+//       if (!response.ok) {
+//         throw new Error("Network response was not ok");
+//       }
+
+//       const data = await response.json();
+//       console.log("get_posts data : ", data);
+//       return data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue("something went wrong");
+//     }
+//   }
+// );
 
 const posts = createSlice({
   name: "posts",
@@ -87,6 +107,14 @@ const posts = createSlice({
     setCity: (state, action) => {
       state.selectedCity = action.payload;
     },
+    logIn : (state,action) => {
+      state.isLoggedIn = true;
+      state.userId = action.payload;
+    },
+    logOut : (state) => {
+      state.isLoggedIn = false;
+      state.userId = null;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -102,8 +130,21 @@ const posts = createSlice({
         // If an error occurs during the asynchronous operation (rejected state), this case logs information about the action (which may include an error message) to the console. It then sets isLoading to false
         console.log(action);
         state.isLoading = false;
+      })
+      .addCase(getUsersList.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getUsersList.fulfilled, (state, action) => {
+        state.isLoading = false;
+        console.log("in extra reducer", action.payload);
+        state.usersList = action.payload;
+      })
+      .addCase(getUsersList.rejected, (state, action) => {
+        // If an error occurs during the asynchronous operation (rejected state), this case logs information about the action (which may include an error message) to the console. It then sets isLoading to false
+        console.log(action);
+        state.isLoading = false;
       });
   },
 });
-export const { setCategory, setType, setCity } = posts.actions;
+export const { setCategory, setType, setCity ,logIn,logOut} = posts.actions;
 export default posts.reducer;

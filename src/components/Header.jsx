@@ -1,7 +1,11 @@
+import { useSelector } from "react-redux";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 
+
 export const Header = () => {
+  const isLoggedIn = useSelector((state) => state.posts.isLoggedIn);
+  console.log("login flag",isLoggedIn);
   return (
     <>
       <div className="header">
@@ -12,6 +16,16 @@ export const Header = () => {
         </div>
         <div className="navBar">
           <ul>
+         {isLoggedIn && (<li>
+              <NavLink to="/login" className="navLink">
+                Logout
+              </NavLink>
+            </li>)}
+            {!isLoggedIn && (<li>
+              <NavLink to="/login" className="navLink">
+                Login
+              </NavLink>
+            </li>)}
             <li>
               <NavLink to="/browse-posts" className="navLink">
                 Browse Posts
