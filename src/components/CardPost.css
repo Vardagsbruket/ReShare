@@ -1,0 +1,65 @@
+.cardPost {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 0;
+  margin: 0;
+  width: fit-content;
+}
+.cardPost img {
+  border-radius: 20px 20px 0px 0px;
+  width: 100%;
+}
+.card-text {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  margin: 24px 32px 24px 32px;
+}
+.Available {
+  background-color: #2147201a;
+}
+.Available a {
+  text-decoration: none;
+  color: #214720;
+}
+.Lender {
+  background-color: #2147201a;
+}
+.Lender a {
+  text-decoration: none;
+  color: #214720;
+}
+.Give {
+  background-color: #5299d31a;
+}
+.Give a {
+  text-decoration: none;
+  color: #5299d3;
+}
+.Needed {
+  background-color: #cc58031a;
+}
+.Needed a {
+  text-decoration: none;
+  color: #cc5803;
+}
+
+.post-title {
+  font-weight: 500;
+  line-height: 24px; /* 120% */
+}
+.post-city {
+  font-weight: 400;
+  line-height: 20px;
+}
+.post-type-category {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 113.5%;
+}
