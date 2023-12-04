@@ -206,6 +206,7 @@
       "city": "Linköping",
       "category": "Tools & machines",
       "id": 20
+<<<<<<< HEAD
     },
     {
       "createdDate": 1701691778582,
@@ -216,6 +217,8 @@
       "city": "Göteborg",
       "category": "Furniture",
       "id": 21
+=======
+>>>>>>> main
     }
   ]
 }
