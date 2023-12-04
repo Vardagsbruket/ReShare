@@ -12,9 +12,11 @@
 // Select the database to use.
 use("ReShareMain");
 
+//db.getCollection("posts").drop(); //erases the whole posts collection
+
 // db.createCollection("posts");
 
-// Insert a few documents into the sales collection.
+// Insert a few documents into the posts collection.
 // db.getCollection("posts").insertMany([
 //   {
 //     id: 1,
