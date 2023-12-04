@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import "./FilterPosts.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory, setType } from "../reducers/postSlice";
 import { FilterCity } from "./FilterCity";
@@ -17,29 +17,33 @@ export const FilterPosts = () => {
   };
 
   return (
-    <div>
-      <label htmlFor="type">Choose type</label>
+    <div className="filter">
+      {/* <label htmlFor="type">Choose type</label> */}
       <select onChange={handleType}>
         <option value={selectedType}>{selectedType}</option>
-        {typeList.map((type, index) => (
-          type !== selectedType ?
-          <option key={index} value={type}>
-            {type}
-          </option>
-          : ""
-        ))}
+        {typeList.map((type, index) =>
+          type !== selectedType ? (
+            <option key={index} value={type} className="dropdown">
+              {type}
+            </option>
+          ) : (
+            ""
+          )
+        )}
       </select>
 
-      <label htmlFor="category">choose category</label>
+      {/* <label htmlFor="category">choose category</label> */}
       <select onChange={handleCategory}>
         <option value={selectedCategory}>{selectedCategory}</option>
-        {categoryList.map((category, index) => (
-          category !== selectedCategory ?
-          <option key={index} value={category}>
-            {category}
-          </option>
-          : ""
-        ))}
+        {categoryList.map((category, index) =>
+          category !== selectedCategory ? (
+            <option key={index} value={category}>
+              {category}
+            </option>
+          ) : (
+            ""
+          )
+        )}
       </select>
       <FilterCity />
     </div>
