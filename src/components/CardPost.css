@@ -1,0 +1,7 @@
+.cardPost {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  border: 1px solid black;
+}
