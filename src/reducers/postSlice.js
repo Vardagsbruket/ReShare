@@ -28,7 +28,10 @@ const initialState = {
     "Garden",
     "Other",
   ],
-  postsList: [],
+  postsList: [
+    
+  ],
+
   selectedCategory: "All",
   selectedType: "All",
   selectedCity: "All",
