@@ -34,23 +34,6 @@ const initialState = {
   selectedCity: "All",
   isLoading: false,
 };
-// export const getPostsList = createAsyncThunk(
-//   "posts/getPostsList",
-//   async (payload, thunkAPI) => {
-//     try {
-//       const response = await fetch("http://localhost:6001/posts");
-//       if (!response.ok) {
-//         throw new Error("Network response was not ok");
-//       }
-
-//       const data = await response.json();
-//       console.log(data);
-//       return data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue("something went wrong");
-//     }
-//   }
-// );
 export const getPostsList = createAsyncThunk(
   "posts/getPostsList",
   async (payload, thunkAPI) => {
