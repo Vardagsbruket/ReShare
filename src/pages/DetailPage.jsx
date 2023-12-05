@@ -3,13 +3,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import { getPostsList } from "../reducers/postSlice";
 import { useEffect, useState } from "react";
+import { setNewPostCreated } from "../reducers/postSlice";
+import { CreatePostBanner } from "../components/CreatePostBanner";
+
 
 export const DetailPage = () => {
+  const dispatch = useDispatch();
+  const isNewPostCreated = useSelector((state) => state.posts.isNewPostCreated);
+
   const [isFetched, setIsFetched] = useState(false);
   const [post, setPost] = useState(null);
 
   const { postId } = useParams();
   const postList = useSelector((state) => state.posts.postsList);
+
+  
+
+  useEffect(() => {
+    console.log("isNewPostCreated:", isNewPostCreated); // Add this log to see the value
+    if (isNewPostCreated) {
+      console.log("Banner should be displayed!");
+
+    }
+  }, [isNewPostCreated, dispatch]);
 
   useEffect(() => {
     const fetchList = async () => {
@@ -28,6 +44,7 @@ export const DetailPage = () => {
         <NavLink to={-1}>
           <button>Go Back</button>
         </NavLink>
+        {isNewPostCreated && <CreatePostBanner />}
         {isFetched && post && (
           <div>
             <img src="" alt="" />

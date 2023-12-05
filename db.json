@@ -196,6 +196,236 @@
       "city": "Malmö",
       "category": "clothes & shoes",
       "id": 19
+    },
+    {
+      "createdDate": 1701686689795,
+      "postTitle": "Testing 1",
+      "description": "Description 1",
+      "contactInfo": "Contact 1",
+      "type": "Needed",
+      "city": "Göteborg",
+      "category": "Vehicles",
+      "id": 20
+    },
+    {
+      "createdDate": 1701689737714,
+      "postTitle": "Testing 2",
+      "description": "Testing 2",
+      "contactInfo": "Contact 2",
+      "type": "Available",
+      "city": "Kista",
+      "category": "Furniture",
+      "id": 21
+    },
+    {
+      "createdDate": 1701689962377,
+      "postTitle": "Testing 3",
+      "description": "testing 3",
+      "contactInfo": "Contact 3",
+      "type": "Available",
+      "city": "Kista",
+      "category": "Tools & machines",
+      "id": 22
+    },
+    {
+      "createdDate": 1701690150211,
+      "postTitle": "Testing 2",
+      "description": "Testing 2",
+      "contactInfo": "Contact 2",
+      "type": "Needed",
+      "city": "Uppsala",
+      "category": "Furniture",
+      "id": 23
+    },
+    {
+      "createdDate": 1701692497097,
+      "postTitle": "Testing 3",
+      "description": "testing 3",
+      "contactInfo": "Contact 3",
+      "type": "Needed",
+      "city": "Göteborg",
+      "category": "Toys",
+      "id": 24
+    },
+    {
+      "createdDate": 1701693585084,
+      "postTitle": "Testing 4",
+      "description": "Testing 4",
+      "contactInfo": "Testing 4",
+      "type": "Needed",
+      "city": "Kista",
+      "category": "Furniture",
+      "id": 25
+    },
+    {
+      "createdDate": 1701693613209,
+      "postTitle": "Testing 5",
+      "description": "Testing 5",
+      "contactInfo": "Testing 5",
+      "type": "Needed",
+      "city": "Kista",
+      "category": "Toys",
+      "id": 26
+    },
+    {
+      "createdDate": 1701693724270,
+      "postTitle": "Testing 6",
+      "description": "Testing 6",
+      "contactInfo": "Testing 6",
+      "type": "Needed",
+      "city": "Kista",
+      "category": "Toys",
+      "id": 27
+    },
+    {
+      "createdDate": 1701759589289,
+      "postTitle": "Testing 7",
+      "description": "Testing 7",
+      "contactInfo": "Testing 7",
+      "type": "Needed",
+      "city": "Kista",
+      "category": "Furniture",
+      "id": 28
+    },
+    {
+      "createdDate": 1701759611305,
+      "postTitle": "Testing 8",
+      "description": "Testing 8",
+      "contactInfo": "testing 8",
+      "type": "Needed",
+      "city": "Kista",
+      "category": "Toys",
+      "id": 29
+    },
+    {
+      "createdDate": 1701759662467,
+      "postTitle": "Testing 9",
+      "description": "",
+      "contactInfo": null,
+      "type": "Needed",
+      "city": "Malmö",
+      "category": "Furniture",
+      "id": 30
+    },
+    {
+      "createdDate": 1701759948952,
+      "postTitle": "Testing 10",
+      "description": "test",
+      "contactInfo": null,
+      "type": "Available",
+      "city": "Malmö",
+      "category": "Toys",
+      "id": 31
+    },
+    {
+      "createdDate": 1701760681129,
+      "postTitle": "Testing 11",
+      "description": "testing 11",
+      "contactInfo": "Testing 10",
+      "type": "Available",
+      "city": "Malmö",
+      "category": "Toys",
+      "id": 32
+    },
+    {
+      "createdDate": 1701760730659,
+      "postTitle": "Testing 12",
+      "description": "Testing 12",
+      "contactInfo": "+4712312312",
+      "type": "Available",
+      "city": "Göteborg",
+      "category": "Furniture",
+      "id": 33
+    },
+    {
+      "createdDate": 1701760834442,
+      "postTitle": "Testing 13",
+      "description": "test",
+      "contactInfo": "test",
+      "type": "Available",
+      "city": "Göteborg",
+      "category": "Vehicles",
+      "id": 34
+    },
+    {
+      "createdDate": 1701760955527,
+      "postTitle": "Testing 14",
+      "description": "test",
+      "contactInfo": "test",
+      "type": "Needed",
+      "city": "Kista",
+      "category": "Furniture",
+      "id": 35
+    },
+    {
+      "createdDate": 1701761106144,
+      "postTitle": "Testing 15",
+      "description": "test",
+      "contactInfo": "test",
+      "type": "Needed",
+      "city": "Göteborg",
+      "category": "Vehicles",
+      "id": 36
+    },
+    {
+      "createdDate": 1701761766601,
+      "postTitle": "Testing 16",
+      "description": "Testing",
+      "contactInfo": "Testing",
+      "type": "Needed",
+      "city": "Göteborg",
+      "category": "Toys",
+      "id": 37
+    },
+    {
+      "createdDate": 1701761861964,
+      "postTitle": "Testing 2",
+      "description": "Test",
+      "contactInfo": null,
+      "type": "Needed",
+      "city": "Göteborg",
+      "category": "Vehicles",
+      "id": 38
+    },
+    {
+      "createdDate": 1701761998923,
+      "postTitle": "Testing 2",
+      "description": "test",
+      "contactInfo": "test",
+      "type": "Needed",
+      "city": "Göteborg",
+      "category": "Vehicles",
+      "id": 39
+    },
+    {
+      "createdDate": 1701762487750,
+      "postTitle": "test",
+      "description": "test",
+      "contactInfo": "test",
+      "type": "Available",
+      "city": "",
+      "category": "Furniture",
+      "id": 40
+    },
+    {
+      "createdDate": 1701765062451,
+      "postTitle": "Testing 20",
+      "description": "Testing",
+      "contactInfo": "test",
+      "type": "Needed",
+      "city": "Göteborg",
+      "category": "Vehicles",
+      "id": 41
+    },
+    {
+      "createdDate": 1701765872844,
+      "postTitle": "Testing 21",
+      "description": "Testing",
+      "contactInfo": "test",
+      "type": "Needed",
+      "city": "Malmö",
+      "category": "Vehicles",
+      "id": 42
     }
   ]
 }

@@ -1,40 +1,52 @@
 import { useState } from "react";
 import "./CreatePost.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getPostsList } from "../reducers/postSlice";
+import { setNewPostCreated, getPostsList } from "../reducers/postSlice";
+import { useNavigate } from "react-router-dom";
 
 export const CreatePost = () => {
   const dispatch = useDispatch();
+  const redirect = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [contact, setContact] = useState(null);
   const [category, setCategory] = useState("");
   const [type, setType] = useState("");
   const [city, setCity] = useState("");
+  const [CreateNewPostSuccess, setCreateNewPostSuccess] = useState(false);
   const categoryList = useSelector((state) => state.posts.categoryList);
   const cityList = useSelector((state) => state.posts.cityList);
   //   const [image, setImage] = useState(null);
 
   const createNewPost = async () => {
-    try {
-      await fetch("http://localhost:6001/posts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          createdDate: new Date().getTime(),
-          postTitle: title,
-          description: description,
-          contactInfo: contact,
-          type: type,
-          city: city,
-          category: category,
-          //   img:image
-        }),
-      });
+      try {
+        const response = await fetch("http://localhost:6001/posts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            createdDate: new Date().getTime(),
+            postTitle: title,
+            description: description,
+            contactInfo: contact,
+            type: type,
+            city: city,
+            category: category,
+          }),
+        });
+    
+        if (response.ok) {
+          const createdPost = await response.json(); // Assuming the server returns the created post data
+          // checking if the a post was newly created
+          setCreateNewPostSuccess(true);
+          console.log("New post created:", createdPost);
 
-      console.log("New post created");
+          dispatch(setNewPostCreated(true));
+          // Redirect to the page of the newly created post
+          redirect(`/post/${createdPost.id}`);
+        }
+      
     } catch (error) {
       console.error("Error creating new post:", error);
     }
@@ -48,7 +60,7 @@ export const CreatePost = () => {
       description: description,
       contactInfo: contact,
       type: type,
-      city:city ,
+      city: city,
       category: category,
       //img: image,
     };
@@ -81,7 +93,7 @@ export const CreatePost = () => {
 
       <label htmlFor="type">Borrow, lend or give away?</label>
       <select id="type" onChange={(e) => setType(e.target.value)}>
-      <option value="">choose one type</option>
+        <option value="">choose one type</option>
         <option value="Needed">Needed</option>
         <option value="Available">Available</option>
         <option value="Give away">Give away</option>
