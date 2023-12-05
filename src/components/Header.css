@@ -48,3 +48,6 @@ h1,h2,h3,h4,p{
   text-decoration: none;
   color: #214720;
 }
+.navBar .active{
+  text-decoration: underline;
+}
