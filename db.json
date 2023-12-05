@@ -9,8 +9,7 @@
       "city": "Stockholm",
       "type": "Available",
       "category": "Tools & machines",
-      "userId": 4557,
-      "img": ""
+      "userId": 4556
     },
     {
       "id": 2,
@@ -21,8 +20,7 @@
       "city": "uppsala",
       "type": "Available",
       "category": "Clothes & shoes",
-      "userId": 4557,
-      "img": ""
+      "userId": 4556
     },
     {
       "id": 3,
@@ -33,8 +31,7 @@
       "city": "Knivsta",
       "type": "Needed",
       "category": "Vehicles",
-      "userId": 4557,
-      "img": ""
+      "userId": 4556
     },
     {
       "createdDate": 1701263696172,
@@ -44,8 +41,7 @@
       "type": "Give away",
       "city": "Örebro",
       "category": "Vehicles",
-      "userId": 4557,
-      "id": 4
+      "userId": 4556
     },
     {
       "createdDate": 1701265612400,
@@ -55,7 +51,7 @@
       "type": "Give away",
       "city": "Örebro",
       "category": "Clothes & shoes",
-      "userId": 4557,
+      "userId": 4556,
       "id": 5
     },
     {
@@ -77,7 +73,7 @@
       "type": "Needed",
       "city": "Örebro",
       "category": "Furniture",
-      "userId": 4557,
+      "userId": 4556,
       "id": 7
     },
     {
@@ -88,7 +84,7 @@
       "type": "Available",
       "city": "Örebro",
       "category": "Clothes & shoes",
-      "userId": 4558,
+      "userId": 4556,
       "id": 8
     },
     {
@@ -99,7 +95,7 @@
       "type": "Available",
       "city": "Örebro",
       "category": "Clothes & shoes",
-      "userId": 4557,
+      "userId": 4556,
       "id": 9
     },
     {
@@ -121,7 +117,7 @@
       "type": "Lender",
       "city": "Örebro",
       "category": "Clothes & shoes",
-      "userId": 4556,
+      "userId": 4557,
       "id": 11
     },
     {
@@ -132,7 +128,7 @@
       "type": "Give away",
       "city": "Örebro",
       "category": "Clothes & shoes",
-      "userId": 4556,
+      "userId": 4557,
       "id": 12
     },
     {
@@ -143,7 +139,7 @@
       "type": "Available",
       "city": "Kista",
       "category": "Sports & hobby",
-      "userId": 4556,
+      "userId": 4557,
       "id": 13
     },
     {
@@ -154,7 +150,7 @@
       "type": "Available",
       "city": "Västerås",
       "category": "Sports & hobby",
-      "userId": 4558,
+      "userId": 4557,
       "id": 14
     },
     {
@@ -166,7 +162,7 @@
       "city": "Kista",
       "type": "Needed",
       "category": "Vehicles",
-      "userId": 4558
+      "userId": 4557
     },
     {
       "id": 16,
@@ -177,7 +173,7 @@
       "city": "Stockholm",
       "type": "Needed",
       "category": "Vehicles",
-      "userId": 4558
+      "userId": 4557
     },
     {
       "createdDate": 1701465382243,
@@ -196,7 +192,7 @@
       "description": "baby seat needed for weekend",
       "contactInfo": "56777",
       "type": "Needed",
-      "city": "Stockholm",
+      "city": "",
       "category": "Tools & machines",
       "userId": 4558,
       "id": 18
@@ -222,61 +218,7 @@
       "category": "Tools & machines",
       "userId": 4558,
       "id": 20
-    },
-    {
-      "createdDate": 1701691778582,
-      "postTitle": "Bookshelf",
-      "description": "Big bookshelf, made from wood and painted grey.",
-      "contactInfo": "Call me",
-      "type": "Give away",
-      "city": "Göteborg",
-      "category": "Furniture",
-      "userId": 4556,
-      "id": 21
-    },
-    {
-      "createdDate": 1701466247791,
-      "postTitle": "testing again",
-      "description": "testing again",
-      "contactInfo": "r444",
-      "type": "Available",
-      "city": "Uppsala",
-      "category": "Kitchen appliances",
-      "userId": 4556,
-      "id": 19
-    },
-    {
-      "postTitle": "testing 2",
-      "description": "test",
-      "contactInfo": "4456",
-      "category": "Garden",
-      "type": "Needed",
-      "city": "Uppsala",
-      "createdDate": null,
-      "userId": 4556,
-      "id": 20
-    },
-    {
-      "postTitle": "Cycle needed",
-      "description": "In Stockholm for a day. Needed a cycle for a day",
-      "contactInfo": "152788",
-      "category": "Sports & hobby",
-      "type": "Needed",
-      "city": "",
-      "userId": 4556,
-      "createdDate": null,
-      "id": 22
-    },
-    {
-      "postTitle": "Kids scooty",
-      "description": "kids scooty in good condition. for 3 to 5 years old",
-      "contactInfo": "1234",
-      "category": "Furniture",
-      "type": "Give away",
-      "city": "Uppsala",
-      "userId": 4556,
-      "createdDate": null,
-      "id": 23
+
     }
   ],
   "users": [
@@ -287,7 +229,7 @@
     },
     {
       "userId": 4557,
-      "email": "fjoona@gmail.com",
+      "email": "joona@gmail.com",
       "password": "abcdefgh"
     },
     {
@@ -297,3 +239,4 @@
     }
   ]
 }
+

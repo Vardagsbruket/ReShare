@@ -57,10 +57,10 @@ const navigate = useNavigate();
   if (isLoggedIn)
   return (
 
-    <di> 
+    <div> 
         <p> Are you sure you want to logout?</p>
         <button onClick={handleYes}>Yes</button>
-    </di>
+    </div>
 );
 
   return (

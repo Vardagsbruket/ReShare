@@ -1,7 +1,5 @@
 import { NavLink, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { FacebookShareButton, FacebookIcon } from "react-share";
-import { getPostsList } from "../reducers/postSlice";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
 export const DetailPage = () => {
@@ -14,7 +12,8 @@ export const DetailPage = () => {
   useEffect(() => {
     const fetchList = async () => {
       setIsFetched(false);
-      const foundPost = await postList.find((post) => post._id === postId);
+      // const foundPost = await postList.find((post) => post._id === postId);
+      const foundPost = await postList.find((post) => post.id === postId);
       setPost(foundPost);
       setIsFetched(true);
     };
@@ -22,6 +21,8 @@ export const DetailPage = () => {
     fetchList();
   }, [postId, postList]);
 
+  if(post)
+  console.log("post",post);
   return (
     <>
       <div className="detail-post-container">
