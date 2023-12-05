@@ -27,7 +27,6 @@ export const Header = () => {
                 Create Post
               </NavLink>
             </li>
-           
           </ul>
         </div>
       </div>
