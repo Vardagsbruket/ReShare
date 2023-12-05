@@ -30,7 +30,7 @@ export const DetailPage = () => {
   useEffect(() => {
     const fetchList = async () => {
       setIsFetched(false);
-      const foundPost = await postList.find((post) => post.id === parseInt(postId));
+      const foundPost = await postList.find((post) => post._id === postId);
       setPost(foundPost);
       setIsFetched(true);
     };
