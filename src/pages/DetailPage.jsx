@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import { getPostsList } from "../reducers/postSlice";
 import { useEffect, useState } from "react";
+import { Loading } from "../components/Loading";
 
 export const DetailPage = () => {
   const [isFetched, setIsFetched] = useState(false);
+
   const [post, setPost] = useState(null);
 
   const { postId } = useParams();
@@ -28,23 +30,30 @@ export const DetailPage = () => {
         <NavLink to={-1}>
           <button>Go Back</button>
         </NavLink>
-        {isFetched && post && (
-          <div>
-            <img src="" alt="" />
-            <div className="detail-post-wrapper">
-              <p>{post.type}</p>
-              <h2>{post.postTitle}</h2>
-              <p>{post.category}</p>
-              <div>
-                <p>{post.description}</p>
-                <p>{post.city}</p>
-                <p>{post.contactInfo}</p>
-                <p>{post.createdDate}</p>
+        {isFetched ? (
+          post && post._id ? (
+            <div>
+              <img src="" alt="" />
+              <div className="detail-post-wrapper">
+                <p>{post.type}</p>
+                <h2>{post.postTitle}</h2>
+                <p>{post.category}</p>
+                <div>
+                  <p>{post.description}</p>
+                  <p>{post.city}</p>
+                  <p>{post.contactInfo}</p>
+                  <p>{post.createdDate}</p>
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="noPost">
+              <p>This post does not exist</p>
+            </div>
+          )
+        ) : (
+          <Loading />
         )}
-        <p></p>
       </div>
     </>
   );

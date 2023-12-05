@@ -18,7 +18,6 @@ export const CreatePost = () => {
   const [newPost,setNewPost] = useState(initialState);
   const categoryList = useSelector((state) => state.posts.categoryList);
   const cityList = useSelector((state) => state.posts.cityList);
-  //   const [image, setImage] = useState(null);
 
   const createNewPost = async () => {
     // try {
@@ -103,12 +102,14 @@ export const CreatePost = () => {
 
       <label htmlFor="category">Categories</label>
       <select id="category" onChange={(e) => handleChange("category",e.target.value)}>
-        {categoryList.map((category, index) => (
+      <option value="">choose category</option>
+        {categoryList.slice(1).map((category, index) => (
           <option key={index}>{category}</option>
         ))}
       </select>
       <label htmlFor="category">Select city</label>
       <select id="category" onChange={(e) => handleChange("city",e.target.value)}>
+      <option value="">Select city</option>
         {cityList.slice(1).map((city, index) => (
           <option key={index}>{city}</option>
         ))}

@@ -8,7 +8,7 @@ export const FilterPosts = () => {
   const selectedCategory = useSelector((state) => state.posts.selectedCategory);
   const dispatch = useDispatch();
   const categoryList = useSelector((state) => state.posts.categoryList);
-  const typeList = ["all", "Available", "Give away", "Needed"];
+  const typeList = ["Available", "Give away", "Needed"];
   const handleCategory = (e) => {
     dispatch(setCategory(e.target.value));
   };
