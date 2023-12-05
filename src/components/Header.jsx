@@ -18,6 +18,11 @@ export const Header = () => {
               </NavLink>
             </li>
             <li>
+              <NavLink to="/about" className="about">
+                About
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/browse-posts" className="browse">
                 Browse Posts
               </NavLink>
