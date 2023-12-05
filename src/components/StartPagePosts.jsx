@@ -25,6 +25,7 @@ export const StartPagePosts = () => {
   return (
     <>
       <section className="list-post-container">
+
         {filteredPosts.map((post) => (
           <CardPost key={post.id} post={post} />
         ))}
