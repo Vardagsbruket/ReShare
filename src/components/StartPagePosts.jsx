@@ -11,7 +11,7 @@ export const StartPagePosts = () => {
 
   useEffect(() => {
     let allfilteredPosts;
-    if(selectedCity !== "all")
+    if(selectedCity !== "All")
     {
       allfilteredPosts = postList?.filter((post) => post.type === "Needed" && post.city === selectedCity);
     }

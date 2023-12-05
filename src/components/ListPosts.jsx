@@ -33,7 +33,7 @@ export const ListPosts = () => {
       ) : (
         <section className="list-post-container">
           {filteredPosts.length === 0 ? (
-            <p className="noPosts">No posts to display</p>
+            <div className="noPosts"><h3 >No posts to display</h3></div>
           ) : (
             filteredPosts.map((post) => <CardPost key={post.id} post={post} />)
           )}

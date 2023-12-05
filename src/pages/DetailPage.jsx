@@ -8,6 +8,7 @@ import { setNewPostCreated } from "../reducers/postSlice";
 import { CreatePostBanner } from "../components/CreatePostBanner";
 
 
+
 export const DetailPage = () => {
   const dispatch = useDispatch();
   const isNewPostCreated = useSelector((state) => state.posts.isNewPostCreated);
@@ -64,7 +65,7 @@ export const DetailPage = () => {
             </div>
             </div>
           ) : (
-            <div className="noPost">
+            <div className="noPosts">
               <p>This post does not exist</p>
             </div>
           )

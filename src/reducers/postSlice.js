@@ -29,9 +29,9 @@ const initialState = {
     "Other",
   ],
   postsList: [],
-  selectedCategory: "all",
-  selectedType: "all",
-  selectedCity: "all",
+  selectedCategory: "All",
+  selectedType: "All",
+  selectedCity: "All",
   isLoading: false,
 };
 // export const getPostsList = createAsyncThunk(
