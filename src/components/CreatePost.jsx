@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./CreatePost.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getPostsList } from "../reducers/postSlice";
+import { setNewPostCreated, getPostsList } from "../reducers/postSlice";
+import { useNavigate } from "react-router-dom";
 
 export const CreatePost = () => {
   const dispatch = useDispatch();
@@ -20,23 +21,6 @@ export const CreatePost = () => {
   const cityList = useSelector((state) => state.posts.cityList);
 
   const createNewPost = async () => {
-    // try {
-    //   await fetch("http://localhost:6001/posts", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       createdDate: new Date().getTime(),
-    //       postTitle: title,
-    //       description: description,
-    //       contactInfo: contact,
-    //       type: type,
-    //       city: city,
-    //       category: category,
-    //       //   img:image
-    //     }),
-    //   });
     try {
       const url = "/.netlify/functions/create_post";
       const response = await fetch(url, {
@@ -48,6 +32,17 @@ export const CreatePost = () => {
           newPost
         ),
       });
+
+      if (response.ok) {
+        const createdPost = await response.json(); // Assuming the server returns the created post data
+        // checking if the a post was newly created
+        setCreateNewPostSuccess(true);
+        console.log("New post created:", createdPost);
+
+        dispatch(setNewPostCreated(true));
+        // Redirect to the page of the newly created post
+        redirect(`/post/${createdPost._id}`);
+      }
 
       const data = await response.json();
       console.log(data);

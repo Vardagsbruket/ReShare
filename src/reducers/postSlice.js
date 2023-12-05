@@ -87,6 +87,10 @@ const posts = createSlice({
     setCity: (state, action) => {
       state.selectedCity = action.payload;
     },
+    setNewPostCreated: (state, action) => {
+      console.log("isNewPostCreated set to:", action.payload);
+      state.isNewPostCreated = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -105,5 +109,5 @@ const posts = createSlice({
       });
   },
 });
-export const { setCategory, setType, setCity } = posts.actions;
+export const { setCategory, setType,setCity, setNewPostCreated } = posts.actions;
 export default posts.reducer;

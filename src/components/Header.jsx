@@ -6,24 +6,24 @@ export const Header = () => {
     <>
       <div className="header">
         <div>
-          <NavLink to="/" className="navLink">
+          <NavLink to="/" className="logo">
             <h1>ReShare</h1>
           </NavLink>
         </div>
         <div className="navBar">
           <ul>
             <li>
-              <NavLink to="/browse-posts" className="navLink">
+              <NavLink to="/browse-posts" className="browse">
                 Browse Posts
               </NavLink>
             </li>
             <li>
-              <NavLink to="/create-post" className="navLink">
+              <NavLink to="/create-post" className="create">
                 Create Post
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" className="navLink">
+              <NavLink to="/about" className="about">
                 About
               </NavLink>
             </li>

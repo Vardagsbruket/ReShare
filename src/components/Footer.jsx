@@ -4,7 +4,7 @@ import { FacebookShareButton, FacebookIcon } from "react-share";
 export const Footer = () => {
   return (
     <div className="footer">
-      <p>
+      <p className="made-by-text">
         A project by <a href="https://github.com/filzasaleem">Filza Saleem</a>,{" "}
         <a href="https://github.com/joona-3">Joona Miettinen</a> and{" "}
         <a href="https://github.com/Vardagsbruket">Diana Undén</a>{" "}
