@@ -7,8 +7,6 @@ import { Loading } from "../components/Loading";
 import { setNewPostCreated } from "../reducers/postSlice";
 import { CreatePostBanner } from "../components/CreatePostBanner";
 
-
-
 export const DetailPage = () => {
   const dispatch = useDispatch();
   const isNewPostCreated = useSelector((state) => state.posts.isNewPostCreated);
@@ -20,13 +18,10 @@ export const DetailPage = () => {
   const { postId } = useParams();
   const postList = useSelector((state) => state.posts.postsList);
 
-  
-
   useEffect(() => {
     console.log("isNewPostCreated:", isNewPostCreated); // Add this log to see the value
     if (isNewPostCreated) {
       console.log("Banner should be displayed!");
-
     }
   }, [isNewPostCreated, dispatch]);
 
@@ -62,7 +57,14 @@ export const DetailPage = () => {
                   <p>{post.contactInfo}</p>
                   <p>{post.createdDate}</p>
                 </div>
-            </div>
+                <div>
+                  <FacebookShareButton
+                    url={`https://stirring-florentine-c4bb3f.netlify.app/post/${post._id}`}
+                  >
+                    <FacebookIcon size={32} round />
+                  </FacebookShareButton>
+                </div>
+              </div>
             </div>
           ) : (
             <div className="noPosts">
