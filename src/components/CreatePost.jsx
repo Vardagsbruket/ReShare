@@ -10,14 +10,17 @@ import { useNavigate } from "react-router-dom";
 
 export const CreatePost = () => {
   const dispatch = useDispatch();
-  const redirect = useNavigate();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [contact, setContact] = useState(null);
-  const [category, setCategory] = useState("");
-  const [type, setType] = useState("");
-  const [city, setCity] = useState("");
-  const [CreateNewPostSuccess, setCreateNewPostSuccess] = useState(false);
+  const initialState = {
+    postTitle: "",
+    description: "",
+    contactInfo: null,
+    category: "",
+    type: "",
+    city: "",
+    createdDate: null,
+  };
+
+  const [newPost, setNewPost] = useState(initialState);
   const categoryList = useSelector((state) => state.posts.categoryList);
   const cityList = useSelector((state) => state.posts.cityList);
 
@@ -81,24 +84,24 @@ export const CreatePost = () => {
       <input
         type="text"
         id="postTitle"
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(e) => handleChange("postTitle", e.target.value)}
       ></input>
 
       <label htmlFor="description">Description:</label>
       <textarea
         id="description"
-        onChange={(e) => setDescription(e.target.value)}
+        onChange={(e) => handleChange("description", e.target.value)}
       ></textarea>
 
       <label htmlFor="contactInfo">Contact:</label>
       <input
         type="text"
         id="contactInfo"
-        onChange={(e) => setContact(e.target.value)}
+        onChange={(e) => handleChange("contactInfo", e.target.value)}
       ></input>
 
       <label htmlFor="type">Borrow, lend or give away?</label>
-      <select id="type" onChange={(e) => setType(e.target.value)}>
+      <select id="type" onChange={(e) => handleChange("type", e.target.value)}>
         <option value="">choose one type</option>
         <option value="Needed">Needed</option>
         <option value="Available">Available</option>
@@ -106,13 +109,21 @@ export const CreatePost = () => {
       </select>
 
       <label htmlFor="category">Categories</label>
-      <select id="category" onChange={(e) => setCategory(e.target.value)}>
-        {categoryList.map((category, index) => (
+      <select
+        id="category"
+        onChange={(e) => handleChange("category", e.target.value)}
+      >
+        <option value="">choose category</option>
+        {categoryList.slice(1).map((category, index) => (
           <option key={index}>{category}</option>
         ))}
       </select>
       <label htmlFor="category">Select city</label>
-      <select id="category" onChange={(e) => setCity(e.target.value)}>
+      <select
+        id="category"
+        onChange={(e) => handleChange("city", e.target.value)}
+      >
+        <option value="">Select city</option>
         {cityList.slice(1).map((city, index) => (
           <option key={index}>{city}</option>
         ))}

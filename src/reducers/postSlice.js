@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   cityList: [
-    "all",
+    "All",
     "Stockholm",
     "Göteborg",
     "Kista",
@@ -16,22 +16,22 @@ const initialState = {
     "Kiruna",
   ],
   categoryList: [
-    "all",
+    "All",
     "Vehicles",
     "Furniture",
     "Toys",
-    "clothes & shoes",
+    "Clothes & shoes",
     "Tools & machines",
-    "interior",
+    "Interior",
     "Sports & hobby",
     "Kitchen appliances",
     "Garden",
     "Other",
   ],
   postsList: [],
-  selectedCategory: "all",
-  selectedType: "all",
-  selectedCity: "all",
+  selectedCategory: "All",
+  selectedType: "All",
+  selectedCity: "All",
   isLoading: false,
 };
 // export const getPostsList = createAsyncThunk(
