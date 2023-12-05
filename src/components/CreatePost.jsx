@@ -1,7 +1,11 @@
 import { useState } from "react";
 import "./CreatePost.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setNewPostCreated, getPostsList } from "../reducers/postSlice";
+import {
+  setNewPostCreated,
+  getPostsList,
+  createNewPost,
+} from "../reducers/postSlice";
 import { useNavigate } from "react-router-dom";
 
 export const CreatePost = () => {
@@ -16,49 +20,43 @@ export const CreatePost = () => {
   const [CreateNewPostSuccess, setCreateNewPostSuccess] = useState(false);
   const categoryList = useSelector((state) => state.posts.categoryList);
   const cityList = useSelector((state) => state.posts.cityList);
-  //   const [image, setImage] = useState(null);
 
-  const createNewPost = async () => {
-    try {
-      const url = "/.netlify/functions/create_post";
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          createdDate: new Date().getTime(),
-          postTitle: title,
-          description: description,
-          contactInfo: contact,
-          type: type,
-          city: city,
-          category: category,
-          //   img:image
-        }),
-      });
+  // const createNewPost = async () => {
+  //   try {
+  //     const url = "/.netlify/functions/create_post";
+  //     let createdPost = {
+  //       createdDate: new Date().getTime(),
+  //       postTitle: title,
+  //       description: description,
+  //       contactInfo: contact,
+  //       type: type,
+  //       city: city,
+  //       category: category,
+  //     };
+  //     const response = await fetch(url, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(createdPost),
+  //     });
+  //     if (response.ok) {
+  //       const data = await response.json(); // Assuming the server returns the created post data
+  //       createdPost._id = data.insertedId;
+  //       // checking if the a post was newly created
+  //       setCreateNewPostSuccess(true);
+  //       dispatch(setNewPostCreated(true));
+  //       // Redirect to the page of the newly created post
+  //       redirect(`/post/${createdPost.insertedId}`);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error creating new post:", error);
+  //   }
+  // };
 
-      if (response.ok) {
-        const createdPost = await response.json(); // Assuming the server returns the created post data
-        // checking if the a post was newly created
-        setCreateNewPostSuccess(true);
-        console.log("New post created:", createdPost);
-
-        dispatch(setNewPostCreated(true));
-        // Redirect to the page of the newly created post
-        redirect(`/post/${createdPost._id}`);
-      }
-
-      const data = await response.json();
-      console.log(data);
-      console.log("New post created");
-    } catch (error) {
-      console.error("Error creating new post:", error);
-    }
-  };
-
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
+
     const newPost = {
       createdDate: new Date().getTime(),
       postTitle: title,
@@ -67,11 +65,14 @@ export const CreatePost = () => {
       type: type,
       city: city,
       category: category,
-      //img: image,
     };
-    createNewPost();
-
-    dispatch(getPostsList());
+    const createdPost = await dispatch(await createNewPost(newPost));
+    setCreateNewPostSuccess(true);
+    dispatch(setNewPostCreated(true));
+    // Redirect to the page of the newly created post
+    console.log("Handle form submit:", createdPost);
+    // dispatch(getPostsList());
+    redirect(`/post/${createdPost.payload._id}`);
   };
 
   return (
