@@ -26,7 +26,7 @@ export const StartPagePosts = () => {
     <>
       <section className="list-post-container">
 
-        {filteredPosts.map((post) => (
+        {filteredPosts.reverse().slice(0, 7).map((post) => (
           <CardPost key={post.id} post={post} />
         ))}
       </section>

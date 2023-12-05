@@ -12,6 +12,11 @@ export const Header = () => {
         </div>
         <div className="navBar">
           <ul>
+          <li>
+              <NavLink to="/about" className="about">
+                About
+              </NavLink>
+            </li>
             <li>
               <NavLink to="/about" className="about">
                 About
@@ -27,6 +32,7 @@ export const Header = () => {
                 Create Post
               </NavLink>
             </li>
+           
           </ul>
         </div>
       </div>
