@@ -48,6 +48,22 @@ h1,h2,h3,h4,p{
   text-decoration: none;
   color: #214720;
 }
-.navBar .active{
+
+/* .navBar .about .active{
   text-decoration: underline;
+}
+
+.navBar .active {
+  
+  transform: translateY(-0.25em);
+} */
+
+/* Header.css */
+
+
+
+
+.navBar .active {
+  text-decoration: underline;
+  transform: translateY(-0.25em);
 }

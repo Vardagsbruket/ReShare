@@ -6,6 +6,7 @@
   padding: 0;
   margin: 0;
   width: fit-content;
+  
 }
 .cardPost img {
   border-radius: 20px 20px 0px 0px;
@@ -63,3 +64,13 @@
   font-weight: 500;
   line-height: 113.5%;
 }
+
+.cardPost :hover {
+    transform: translateY(-3px);
+    opacity:0.9;
+
+    
+}
+  
+ 
+

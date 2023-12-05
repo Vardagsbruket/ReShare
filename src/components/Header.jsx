@@ -12,6 +12,11 @@ export const Header = () => {
         </div>
         <div className="navBar">
           <ul>
+          <li>
+              <NavLink to="/about" className="about">
+                About
+              </NavLink>
+            </li>
             <li>
               <NavLink to="/browse-posts" className="browse">
                 Browse Posts
@@ -22,11 +27,7 @@ export const Header = () => {
                 Create Post
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/about" className="about">
-                About
-              </NavLink>
-            </li>
+           
           </ul>
         </div>
       </div>
