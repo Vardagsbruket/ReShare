@@ -30,13 +30,15 @@ export const ListPosts = () => {
     <>
       {isLoading ? (
         <Loading />
+      ) : filteredPosts.length === 0 ? (
+        <div className="noPosts">
+          <h3>There are no posts to display.</h3>
+        </div>
       ) : (
         <section className="list-post-container">
-          {filteredPosts.length === 0 ? (
-            <p className="noPosts">No posts to display</p>
-          ) : (
-            filteredPosts.map((post) => <CardPost key={post.id} post={post} />)
-          )}
+          {filteredPosts.map((post) => (
+            <CardPost key={post.id} post={post} />
+          ))}
         </section>
       )}
     </>
