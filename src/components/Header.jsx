@@ -12,11 +12,6 @@ export const Header = () => {
         </div>
         <div className="navBar">
           <ul>
-          <li>
-              <NavLink to="/about" className="about">
-                About
-              </NavLink>
-            </li>
             <li>
               <NavLink to="/about" className="about">
                 About
