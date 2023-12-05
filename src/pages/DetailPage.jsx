@@ -66,7 +66,7 @@ export const DetailPage = () => {
             </div>
           ) : (
             <div className="noPosts">
-              <p>This post does not exist</p>
+              <h3>This post does not exist</h3>
             </div>
           )
         ) : (
