@@ -4,7 +4,7 @@
 
 .detail-post-wrapper {
   background-color: #ece4d9;
-  padding: 50px;
+  padding: 50px 50px 25px 50px;
   width: 48%;
   height: auto;
   height: 100%;
@@ -13,7 +13,7 @@
 .go-back {
   color: #214720;
   text-decoration: none;
-  padding: 40px;
+  margin: 40px;
 }
 .detail-flex-container {
   display: flex;

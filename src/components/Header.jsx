@@ -13,6 +13,11 @@ export const Header = () => {
         <div className="navBar">
           <ul>
             <li>
+              <NavLink to="/about" className="about">
+                About
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/browse-posts" className="browse">
                 Browse Posts
               </NavLink>
@@ -20,11 +25,6 @@ export const Header = () => {
             <li>
               <NavLink to="/create-post" className="create">
                 Create Post
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/about" className="about">
-                About
               </NavLink>
             </li>
           </ul>
