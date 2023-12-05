@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 export const CreatePost = () => {
   const dispatch = useDispatch();
+  const redirect = useNavigate();
   const initialState = {
     postTitle: "",
     description: "",
@@ -23,52 +24,33 @@ export const CreatePost = () => {
   const [newPost, setNewPost] = useState(initialState);
   const categoryList = useSelector((state) => state.posts.categoryList);
   const cityList = useSelector((state) => state.posts.cityList);
+  const [CreateNewPostSuccess, setCreateNewPostSuccess] = useState(false);
 
-  // const createNewPost = async () => {
-  //   try {
-  //     const url = "/.netlify/functions/create_post";
-  //     let createdPost = {
-  //       createdDate: new Date().getTime(),
-  //       postTitle: title,
-  //       description: description,
-  //       contactInfo: contact,
-  //       type: type,
-  //       city: city,
-  //       category: category,
-  //     };
-  //     const response = await fetch(url, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(createdPost),
-  //     });
-  //     if (response.ok) {
-  //       const data = await response.json(); // Assuming the server returns the created post data
-  //       createdPost._id = data.insertedId;
-  //       // checking if the a post was newly created
-  //       setCreateNewPostSuccess(true);
-  //       dispatch(setNewPostCreated(true));
-  //       // Redirect to the page of the newly created post
-  //       redirect(`/post/${createdPost.insertedId}`);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error creating new post:", error);
-  //   }
-  // };
+  const handleChange = (key, value) => {
+    setNewPost({ ...newPost, [key]: value });
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setNewPost((prev) => ({ ...prev, createdDate: new Date().getTime() }));
+    await createNewPost();
+    setNewPost((prevState) => ({ ...prevState, ...initialState }));
+    console.log("....", newPost);
+    dispatch(getPostsList());
 
-    const newPost = {
-      createdDate: new Date().getTime(),
-      postTitle: title,
-      description: description,
-      contactInfo: contact,
-      type: type,
-      city: city,
-      category: category,
-    };
+    //
+    // const handleFormSubmit = async (e) => {
+    //   e.preventDefault();
+
+    //   const newPost = {
+    //     createdDate: new Date().getTime(),
+    //     postTitle: title,
+    //     description: description,
+    //     contactInfo: contact,
+    //     type: type,
+    //     city: city,
+    //     category: category,
+    //   };
     const createdPost = await dispatch(await createNewPost(newPost));
     setCreateNewPostSuccess(true);
     dispatch(setNewPostCreated(true));
