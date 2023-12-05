@@ -46,7 +46,7 @@ export const CreatePost = () => {
 
         dispatch(setNewPostCreated(true));
         // Redirect to the page of the newly created post
-        redirect(`/post/${createdPost.id}`);
+        redirect(`/post/${createdPost._id}`);
       }
 
       const data = await response.json();
