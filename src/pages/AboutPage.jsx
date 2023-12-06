@@ -3,7 +3,7 @@ export const AboutPage = () => {
   return (
     <div className="about">
       <div className="about-wrapper">
-        <h1>ReShare: Technigo's Upskill Project in JavaScript and React</h1>
+        <h1>ReShare: Upskill Project in Technigo's JavaScript and React course</h1>
       <p>
         This is app is created as our final project for Technigo's upskill
         course i JavaScript and React. The mission was to create a project that
