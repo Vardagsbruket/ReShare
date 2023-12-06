@@ -33,6 +33,7 @@ const initialState = {
   selectedCity: "All",
   isLoading: false,
   isNewPostCreated: false,
+
 };
 export const getPostsList = createAsyncThunk(
   "posts/getPostsList",
