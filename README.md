@@ -51,7 +51,7 @@ The following technologies were used in the development of ReShare:
 - [@reduxjs/toolkit](https://redux-toolkit.js.org/): A set of utilities to reduce boilerplate in Redux logic.
 - [React Router](https://reactrouter.com/): A standard library for routing in React applications.
 - [react-share](https://github.com/nygardk/react-share): A React component for social media sharing functionality.
-- 
+  
 # Project Setup
 
 To contribute or run this project locally, follow these steps:
