@@ -9,6 +9,7 @@
 }
 .cardPost img {
   border-radius: 20px 20px 0px 0px;
+  border: 2px solid #ECE4D9;
   width: 100%;
 }
 .card-text {
