@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { CardPost } from "./CardPost";
 import "./Listposts.css";
-import "./StartPagePosts.css";
+import "./StartPageListPosts.css";
 import { useEffect, useState } from "react";
 
 export const StartPagePosts = () => {
