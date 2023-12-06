@@ -11,7 +11,6 @@ export const Hero = () => {
           well-being of your local community. If you find yourself in need of
           something, asking to borrow has never been simpler.
         </p>
-        <label>Select a city to view location-based posts:</label>
         <FilterCity />
       </section>
     </section>

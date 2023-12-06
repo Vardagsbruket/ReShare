@@ -32,3 +32,9 @@
 .hero-wrapper {
   max-width: 60%;
 }
+
+.hero-wrapper div {
+  display:flex;
+  flex-direction: column;
+  max-width: 300px;
+}
