@@ -67,11 +67,10 @@ export const createNewPost = createAsyncThunk(
         body: JSON.stringify(payload),
       });
       if (response.ok) {
-        const data = await response.json(); // Assuming the server returns the created post data
+        const data = await response.json();
         payload._id = data.insertedId;
-        // checking if the a post was newly created
       }
-      console.log("In the slice:", payload);
+
       return payload;
     } catch (error) {
       console.error("Error creating new post:", error);
@@ -107,8 +106,6 @@ const posts = createSlice({
         state.postsList = action.payload;
       })
       .addCase(getPostsList.rejected, (state, action) => {
-        // If an error occurs during the asynchronous operation (rejected state), this case logs information about the action (which may include an error message) to the console. It then sets isLoading to false
-        //console.log(action);
         state.isLoading = false;
       })
       .addCase(createNewPost.fulfilled, (state, action) => {

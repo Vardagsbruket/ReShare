@@ -2,10 +2,8 @@ import { NavLink, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import "./DetailPage.css";
-import { getPostsList } from "../reducers/postSlice";
 import { useEffect, useState } from "react";
 import { Loading } from "../components/Loading";
-import { setNewPostCreated } from "../reducers/postSlice";
 import { CreatePostBanner } from "../components/CreatePostBanner";
 
 import clothes from "../assets/clothes_1x.webp";
@@ -20,7 +18,6 @@ import interior from "../assets/interior_1x.webp";
 import toys from "../assets/toys_1x.webp";
 
 export const DetailPage = () => {
-  const dispatch = useDispatch();
   const isNewPostCreated = useSelector((state) => state.posts.isNewPostCreated);
 
   const [isFetched, setIsFetched] = useState(false);
@@ -31,24 +28,17 @@ export const DetailPage = () => {
   const postList = useSelector((state) => state.posts.postsList);
 
   useEffect(() => {
-    //console.log("isNewPostCreated:", isNewPostCreated); // Add this log to see the value
-    if (isNewPostCreated) {
-      console.log("Banner should be displayed!");
-    }
-  }, [isNewPostCreated, dispatch]);
-
-  useEffect(() => {
     const fetchList = async () => {
       setIsFetched(false);
       const foundPost = await postList.find((post) => post._id === postId);
       setPost(foundPost);
       setIsFetched(true);
+      console.log("created date:", post.createdDate);
     };
 
     fetchList();
   }, [postId, postList]);
 
-  // img placeholder
   let imgPlaceHolder = "";
   switch (post?.category) {
     case "Vehicles":
@@ -95,7 +85,7 @@ export const DetailPage = () => {
         {isFetched ? (
           post && post._id ? (
             <div className="detail-flex-container">
-              <div class="img-container">
+              <div className="img-container">
                 <img src={imgPlaceHolder} alt="" />
               </div>
               <div className="detail-post-wrapper">

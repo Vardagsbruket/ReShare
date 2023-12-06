@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 8px;
   font-family: Poppins;
   font-size: 20px;
   font-style: normal;
@@ -53,15 +53,20 @@
 .post-title {
   font-weight: 500;
   line-height: 24px; /* 120% */
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
 }
 .post-city {
   font-weight: 400;
   line-height: 20px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
 }
 .post-type-category {
   font-size: 16px;
   font-weight: 500;
   line-height: 113.5%;
+  margin-top: 8px;
 }
 
 .cardPost :hover {
