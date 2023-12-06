@@ -25,7 +25,7 @@ export const CardPost = ({ post }) => {
     case 'Toys':
         imgPlaceHolder = toys;
         break;
-    case 'Clothes & shoes':
+    case 'clothes & shoes':
         imgPlaceHolder = clothes;
         break;
     case 'Tools & machines':
@@ -46,8 +46,6 @@ export const CardPost = ({ post }) => {
     case 'Other':
       imgPlaceHolder = other;
       break;
-      default:
-      imgPlaceHolder = other;
   }
 
   console.log(post.category);
