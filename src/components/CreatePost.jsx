@@ -38,19 +38,6 @@ export const CreatePost = () => {
     console.log("....", newPost);
     dispatch(getPostsList());
 
-    //
-    // const handleFormSubmit = async (e) => {
-    //   e.preventDefault();
-
-    //   const newPost = {
-    //     createdDate: new Date().getTime(),
-    //     postTitle: title,
-    //     description: description,
-    //     contactInfo: contact,
-    //     type: type,
-    //     city: city,
-    //     category: category,
-    //   };
     const createdPost = await dispatch(await createNewPost(newPost));
     setCreateNewPostSuccess(true);
     dispatch(setNewPostCreated(true));
@@ -62,7 +49,7 @@ export const CreatePost = () => {
 
   return (
     <form className="create-post-form" onSubmit={handleFormSubmit}>
-      <label htmlFor="postTitle">Title for product:</label>
+      <label htmlFor="postTitle">Title for post:</label>
       <input
         type="text"
         id="postTitle"
@@ -73,12 +60,15 @@ export const CreatePost = () => {
       <label htmlFor="description">Description:</label>
       <textarea
         id="description"
+        required
+        placeholder="Write a description..."
         onChange={(e) => handleChange("description", e.target.value)}
       ></textarea>
 
       <label htmlFor="contactInfo">Contact:</label>
       <input
         type="text"
+        required
         id="contactInfo"
         required
         onChange={(e) => handleChange("contactInfo", e.target.value)}
@@ -90,7 +80,7 @@ export const CreatePost = () => {
         required
         onChange={(e) => handleChange("type", e.target.value)}
       >
-        <option value="">choose one type</option>
+        <option value="">Choose one type</option>
         <option value="Needed">Needed</option>
         <option value="Available">Available</option>
         <option value="Give away">Give away</option>
@@ -102,7 +92,9 @@ export const CreatePost = () => {
         required
         onChange={(e) => handleChange("category", e.target.value)}
       >
-        <option value="">choose category</option>
+        <option value="" disabled>
+          Choose category
+        </option>
         {categoryList.slice(1).map((category, index) => (
           <option key={index}>{category}</option>
         ))}
@@ -113,14 +105,14 @@ export const CreatePost = () => {
         required
         onChange={(e) => handleChange("city", e.target.value)}
       >
-        <option value="">Select city</option>
+        <option value="" disabled>
+          Choose a city
+        </option>
         {cityList.slice(1).map((city, index) => (
           <option key={index}>{city}</option>
         ))}
       </select>
-      {/* { <label htmlFor="image">Upload Image:</label>
-      <input type="file" id="image" onChange={(e)=> setImage(e.target.files[0])} /> */}
-      <input type="submit" value="Create post" />
+      <input type="submit" value="Create post" className="submit" />
     </form>
   );
 };
