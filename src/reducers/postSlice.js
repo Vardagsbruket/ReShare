@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
 const initialState = {
   cityList: [
     "All",
@@ -28,10 +27,7 @@ const initialState = {
     "Garden",
     "Other",
   ],
-  postsList: [
-    
-  ],
-
+  postsList: [],
   selectedCategory: "All",
   selectedType: "All",
   selectedCity: "All",
@@ -41,20 +37,23 @@ export const getPostsList = createAsyncThunk(
   "posts/getPostsList",
   async (payload, thunkAPI) => {
     try {
-      const response = await fetch("http://localhost:6001/posts");
-     if (!response.ok) {
+      const response = await fetch("/.netlify/functions/get_posts", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-
       const data = await response.json();
-      console.log(data);
+      console.log("get_posts data : ", data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue("something went wrong");
     }
   }
 );
-
 export const createNewPost = createAsyncThunk(
   "posts/createPost",
   async (payload, thunkAPI) => {
@@ -79,7 +78,6 @@ export const createNewPost = createAsyncThunk(
     }
   }
 );
-
 const posts = createSlice({
   name: "posts",
   initialState,
@@ -110,7 +108,7 @@ const posts = createSlice({
       })
       .addCase(getPostsList.rejected, (state, action) => {
         // If an error occurs during the asynchronous operation (rejected state), this case logs information about the action (which may include an error message) to the console. It then sets isLoading to false
-        console.log(action);
+        //console.log(action);
         state.isLoading = false;
       })
       .addCase(createNewPost.fulfilled, (state, action) => {
