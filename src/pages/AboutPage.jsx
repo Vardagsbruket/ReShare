@@ -2,6 +2,8 @@ import "./AboutPage.css";
 export const AboutPage = () => {
   return (
     <div className="about">
+      <div className="about-wrapper">
+        <h1>ReShare: Technigo's Upskill Project in JavaScript and React</h1>
       <p>
         This is app is created as our final project for Technigo's upskill
         course i JavaScript and React. The mission was to create a project that
@@ -19,6 +21,7 @@ export const AboutPage = () => {
       <p>
         The app is built using React Vite, Redux, React routes and JSON-Server.
       </p>
+      </div>
     </div>
   );
 };
