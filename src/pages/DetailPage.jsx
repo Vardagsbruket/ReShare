@@ -19,6 +19,7 @@ import toys from "../assets/toys_1x.webp";
 
 export const DetailPage = () => {
   const isNewPostCreated = useSelector((state) => state.posts.isNewPostCreated);
+  const dispatch = useDispatch();
 
   const [isFetched, setIsFetched] = useState(false);
 
@@ -26,6 +27,13 @@ export const DetailPage = () => {
 
   const { postId } = useParams();
   const postList = useSelector((state) => state.posts.postsList);
+
+  useEffect(() => {
+    // Reset isNewPostCreated to false after it has been used
+    if (isNewPostCreated) {
+      dispatch(setNewPostCreated(false));
+    }
+  }, [dispatch, isNewPostCreated]);
 
   useEffect(() => {
     const fetchList = async () => {

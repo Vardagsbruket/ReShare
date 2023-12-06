@@ -33,6 +33,7 @@ const initialState = {
   selectedCity: "All",
   isLoading: false,
   isNewPostCreated: false,
+
 };
 export const getPostsList = createAsyncThunk(
   "posts/getPostsList",
@@ -90,6 +91,9 @@ const posts = createSlice({
     },
     setCity: (state, action) => {
       state.selectedCity = action.payload;
+    },
+    setNewPostCreated: (state, action) => {
+      state.isNewPostCreated = action.payload;
     },
   },
   extraReducers: (builder) => {
