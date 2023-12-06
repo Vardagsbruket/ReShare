@@ -1,13 +1,20 @@
 .filter {
-  display: inline-flex;
+  display: flex;
   gap: 16px;
   margin: 32px 0px;
+  width: 75%;
 }
+.filter div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .filter select {
-  width: 297px;
+  width: 100%;
   height: 48px;
   border-radius: 4px;
   border: 2px solid #214720;
   background: #fff;
-  align-self: center;
+  align-self: flex-start;
 }

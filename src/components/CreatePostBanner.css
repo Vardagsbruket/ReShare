@@ -1,25 +1,24 @@
 .banner {
-    padding: 2rem 0;
-    display: flex;
-    justify-content: center;
-    background: rgba(33, 71, 32, 0.10);
-    border-radius: 20px;
-    animation: banner-animation 400ms;
+  margin: 24px 0;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  background: rgba(33, 71, 32, 0.1);
+  border-radius: 20px;
+  animation: banner-animation 400ms;
 }
 .banner p {
-    font-weight: 500;
-    font-size: 20px;
-    color: rgba(33, 71, 32, 1);
-
+  font-weight: 500;
+  font-size: 20px;
+  color: rgba(33, 71, 32, 1);
 }
 
-@keyframes  banner-animation {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+@keyframes banner-animation {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
   }
-  
+  100% {
+    opacity: 1;
+  }
+}

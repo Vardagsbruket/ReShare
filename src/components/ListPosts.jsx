@@ -36,7 +36,7 @@ export const ListPosts = () => {
         </div>
       ) : (
         <section className="list-post-container">
-          {filteredPosts.map((post) => (
+          {filteredPosts.reverse().map((post) => (
             <CardPost key={post.id} post={post} />
           ))}
         </section>

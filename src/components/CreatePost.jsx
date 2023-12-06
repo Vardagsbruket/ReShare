@@ -38,19 +38,6 @@ export const CreatePost = () => {
     console.log("....", newPost);
     dispatch(getPostsList());
 
-    //
-    // const handleFormSubmit = async (e) => {
-    //   e.preventDefault();
-
-    //   const newPost = {
-    //     createdDate: new Date().getTime(),
-    //     postTitle: title,
-    //     description: description,
-    //     contactInfo: contact,
-    //     type: type,
-    //     city: city,
-    //     category: category,
-    //   };
     const createdPost = await dispatch(await createNewPost(newPost));
     setCreateNewPostSuccess(true);
     dispatch(setNewPostCreated(true));
@@ -67,7 +54,6 @@ export const CreatePost = () => {
         type="text"
         id="postTitle"
         required
-        placeholder="What do you want to share?"
         onChange={(e) => handleChange("postTitle", e.target.value)}
       ></input>
 
@@ -84,19 +70,17 @@ export const CreatePost = () => {
         type="text"
         required
         id="contactInfo"
-        placeholder="How to get in touch with you?"
+        required
         onChange={(e) => handleChange("contactInfo", e.target.value)}
       ></input>
 
-      <label htmlFor="type">Do you want to borrow, lend or give away?</label>
+      <label htmlFor="type">Borrow, lend or give away?</label>
       <select
         id="type"
         required
         onChange={(e) => handleChange("type", e.target.value)}
       >
-        <option value="" disabled>
-          Borrow, lend or give away?
-        </option>
+        <option value="">Choose one type</option>
         <option value="Needed">Needed</option>
         <option value="Available">Available</option>
         <option value="Give away">Give away</option>
