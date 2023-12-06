@@ -53,17 +53,6 @@ p {
   color: #214720;
 }
 
-/* .navBar .about .active{
-  text-decoration: underline;
-}
-
-.navBar .active {
-  
-  transform: translateY(-0.25em);
-} */
-
-/* Header.css */
-
 .navBar .active {
   text-decoration: underline;
 }

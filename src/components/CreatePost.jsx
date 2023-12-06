@@ -41,9 +41,7 @@ export const CreatePost = () => {
     const createdPost = await dispatch(await createNewPost(newPost));
     setCreateNewPostSuccess(true);
     dispatch(setNewPostCreated(true));
-    // Redirect to the page of the newly created post
-    console.log("Handle form submit:", createdPost);
-    // dispatch(getPostsList());
+
     redirect(`/post/${createdPost.payload._id}`);
   };
 
@@ -70,7 +68,6 @@ export const CreatePost = () => {
         type="text"
         required
         id="contactInfo"
-        required
         onChange={(e) => handleChange("contactInfo", e.target.value)}
       ></input>
 
