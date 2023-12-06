@@ -8,6 +8,17 @@ import { Loading } from "../components/Loading";
 import { setNewPostCreated } from "../reducers/postSlice";
 import { CreatePostBanner } from "../components/CreatePostBanner";
 
+import clothes from "../assets/clothes_1x.webp";
+import furniture from "../assets/furniture_1x.webp";
+import garden from "../assets/garden_1x.webp";
+import kitchen from "../assets/kitchen_1x.webp";
+import other from "../assets/other_1x.webp";
+import sports from "../assets/sports_1x.webp";
+import tools from "../assets/tools_1x.webp";
+import vehicles from "../assets/vehicles_1x.webp";
+import interior from "../assets/interior_1x.webp";
+import toys from "../assets/toys_1x.webp";
+
 export const DetailPage = () => {
   const dispatch = useDispatch();
   const isNewPostCreated = useSelector((state) => state.posts.isNewPostCreated);
@@ -37,6 +48,43 @@ export const DetailPage = () => {
     fetchList();
   }, [postId, postList]);
 
+  // img placeholder
+  let imgPlaceHolder = "";
+  switch (post?.category) {
+    case "Vehicles":
+      imgPlaceHolder = vehicles;
+      break;
+    case "Furniture":
+      imgPlaceHolder = furniture;
+      break;
+    case "Toys":
+      imgPlaceHolder = toys;
+      break;
+    case "Clothes & shoes":
+      imgPlaceHolder = clothes;
+      break;
+    case "Tools & machines":
+      imgPlaceHolder = tools;
+      break;
+    case "Interior":
+      imgPlaceHolder = interior;
+      break;
+    case "Sports & hobby":
+      imgPlaceHolder = sports;
+      break;
+    case "Kitchen appliances":
+      imgPlaceHolder = kitchen;
+      break;
+    case "Garden":
+      imgPlaceHolder = garden;
+      break;
+    case "Other":
+      imgPlaceHolder = other;
+      break;
+    default:
+      imgPlaceHolder = other;
+  }
+
   return (
     <>
       <div className="detail-post-container">
@@ -47,12 +95,9 @@ export const DetailPage = () => {
         {isFetched ? (
           post && post._id ? (
             <div className="detail-flex-container">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXUDvACls89tR8w9E3DL8FQV_-lK42f3-Gww&usqp=CAU"
-                alt=""
-                className="detail-image"
-              />
-
+              <div class="img-container">
+                <img src={imgPlaceHolder} alt="" />
+              </div>
               <div className="detail-post-wrapper">
                 <p className="type">{post.type}</p>
                 <h2 className="title">{post.postTitle}</h2>
@@ -78,7 +123,7 @@ export const DetailPage = () => {
             </div>
           ) : (
             <div className="noPosts">
-              <h3>This post does not exist</h3>
+              <h3>Working to display your post...</h3>
             </div>
           )
         ) : (

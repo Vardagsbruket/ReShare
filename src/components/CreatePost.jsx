@@ -66,6 +66,7 @@ export const CreatePost = () => {
       <input
         type="text"
         id="postTitle"
+        required
         onChange={(e) => handleChange("postTitle", e.target.value)}
       ></input>
 
@@ -79,11 +80,16 @@ export const CreatePost = () => {
       <input
         type="text"
         id="contactInfo"
+        required
         onChange={(e) => handleChange("contactInfo", e.target.value)}
       ></input>
 
       <label htmlFor="type">Borrow, lend or give away?</label>
-      <select id="type" onChange={(e) => handleChange("type", e.target.value)}>
+      <select
+        id="type"
+        required
+        onChange={(e) => handleChange("type", e.target.value)}
+      >
         <option value="">choose one type</option>
         <option value="Needed">Needed</option>
         <option value="Available">Available</option>
@@ -93,6 +99,7 @@ export const CreatePost = () => {
       <label htmlFor="category">Categories</label>
       <select
         id="category"
+        required
         onChange={(e) => handleChange("category", e.target.value)}
       >
         <option value="">choose category</option>
@@ -103,6 +110,7 @@ export const CreatePost = () => {
       <label htmlFor="category">Select city</label>
       <select
         id="category"
+        required
         onChange={(e) => handleChange("city", e.target.value)}
       >
         <option value="">Select city</option>

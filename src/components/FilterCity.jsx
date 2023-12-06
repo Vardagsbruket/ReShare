@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCity } from "../reducers/postSlice";
 
 export const FilterCity = () => {
-
-
   const cityList = useSelector((state) => state.posts.cityList);
   const selectedCity = useSelector((state) => state.posts.selectedCity);
   const dispatch = useDispatch();
@@ -13,7 +11,7 @@ export const FilterCity = () => {
   };
   return (
     <div>
-      {/* <label htmlFor="city">Select a city </label> */}
+      <label htmlFor="city">Select a city </label>
       <select id="city" onChange={handleSelect}>
         <option value="selectedCity">{selectedCity}</option>
         {cityList.map((city, index) =>

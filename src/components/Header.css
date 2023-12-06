@@ -44,7 +44,11 @@
   text-decoration: none;
   color: #214720;
 }
-h1,h2,h3,h4,p{
+h1,
+h2,
+h3,
+h4,
+p {
   text-decoration: none;
   color: #214720;
 }
@@ -60,10 +64,6 @@ h1,h2,h3,h4,p{
 
 /* Header.css */
 
-
-
-
 .navBar .active {
   text-decoration: underline;
-  transform: translateY(-0.25em);
 }
