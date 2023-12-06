@@ -91,6 +91,9 @@ const posts = createSlice({
     setCity: (state, action) => {
       state.selectedCity = action.payload;
     },
+    setNewPostCreated: (state, action) => {
+      state.isNewPostCreated = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
