@@ -5,7 +5,7 @@ import "./DetailPage.css";
 import { useEffect, useState } from "react";
 import { Loading } from "../components/Loading";
 import { CreatePostBanner } from "../components/CreatePostBanner";
-import { setNewPostCreated } from "../reducers/postSlice.js";
+import { setNewPostCreated } from "../reducers/postSlice";
 
 import clothes from "../assets/clothes_1x.webp";
 import furniture from "../assets/furniture_1x.webp";
