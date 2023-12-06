@@ -44,7 +44,7 @@ To contribute or run this project locally, follow these steps:
 
 1. **Fork and Clone the Repository:**
     ```bash
-    git clone https://github.com/your-username/your-repo.git
+    git clone https://github.com/Vardagsbruket/ReShare
     cd your-repo
     ```
 
