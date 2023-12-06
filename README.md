@@ -5,6 +5,7 @@
    - [Overview](#overview)
    - [Mission](#mission)
    - [Key Features](#key-features)
+   - [Technologies Used](#technologies-used)
 
 2. [Project Setup](#project-setup)
    - [Fork and Clone the Repository](#1-fork-and-clone-the-repository)
@@ -38,6 +39,19 @@ Our primary objective is to contribute to the global effort of mitigating overco
 - **Community Giving:** Contribute to a more sustainable lifestyle by giving away items that still have utility.
 - **Reduced Overconsumption:** Encourage responsible consumption by promoting the sharing economy within local communities.
 
+## Technologies Used
+
+The following technologies were used in the development of ReShare:
+
+- [React](https://reactjs.org/): A JavaScript library for building user interfaces.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): The programming language used for both front-end and back-end development.
+- [MongoDB](https://www.mongodb.com/): A NoSQL database for storing and retrieving data.
+- [JSON Server](https://github.com/typicode/json-server): A fake API implemented using a JSON file to simulate responses during development.
+- [React-Redux](https://react-redux.js.org/): Official React bindings for Redux, a predictable state container.
+- [@reduxjs/toolkit](https://redux-toolkit.js.org/): A set of utilities to reduce boilerplate in Redux logic.
+- [React Router](https://reactrouter.com/): A standard library for routing in React applications.
+- [react-share](https://github.com/nygardk/react-share): A React component for social media sharing functionality.
+- 
 # Project Setup
 
 To contribute or run this project locally, follow these steps:
