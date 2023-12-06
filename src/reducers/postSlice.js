@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   cityList: [
-    "all",
+    "All",
     "Stockholm",
     "Göteborg",
     "Kista",
@@ -16,22 +16,25 @@ const initialState = {
     "Kiruna",
   ],
   categoryList: [
-    "all",
+    "All",
     "Vehicles",
     "Furniture",
     "Toys",
-    "clothes & shoes",
+    "Clothes & shoes",
     "Tools & machines",
-    "interior",
+    "Interior",
     "Sports & hobby",
     "Kitchen appliances",
     "Garden",
     "Other",
   ],
-  postsList: [],
-  selectedCategory: "all",
-  selectedType: "all",
-  selectedCity: "all",
+  postsList: [
+    
+  ],
+
+  selectedCategory: "All",
+  selectedType: "All",
+  selectedCity: "All",
   isLoading: false,
 };
 export const getPostsList = createAsyncThunk(
@@ -52,6 +55,30 @@ export const getPostsList = createAsyncThunk(
   }
 );
 
+export const createNewPost = createAsyncThunk(
+  "posts/createPost",
+  async (payload, thunkAPI) => {
+    try {
+      const url = "/.netlify/functions/create_post";
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      if (response.ok) {
+        const data = await response.json(); // Assuming the server returns the created post data
+        payload._id = data.insertedId;
+        // checking if the a post was newly created
+      }
+      console.log("In the slice:", payload);
+      return payload;
+    } catch (error) {
+      console.error("Error creating new post:", error);
+    }
+  }
+);
 
 const posts = createSlice({
   name: "posts",
@@ -85,8 +112,13 @@ const posts = createSlice({
         // If an error occurs during the asynchronous operation (rejected state), this case logs information about the action (which may include an error message) to the console. It then sets isLoading to false
         console.log(action);
         state.isLoading = false;
+      })
+      .addCase(createNewPost.fulfilled, (state, action) => {
+        state.postsList.push(action.payload);
+        console.log("Created post extra reducer:", action.payload);
       });
   },
 });
-export const { setCategory, setType,setCity, setNewPostCreated } = posts.actions;
+export const { setCategory, setType, setCity, setNewPostCreated } =
+  posts.actions;
 export default posts.reducer;

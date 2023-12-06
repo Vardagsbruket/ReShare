@@ -1,12 +1,48 @@
 .create-post-form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
   margin: 2rem auto;
   text-align: start;
-
+  width: 670px;
+  background-color: #2147201a;
+  padding: 40px 135px;
+  border-radius: 20px;
 }
 
-.create-post-form input, select,textarea {
- margin-bottom: 1rem;
+.create-post-form input,
+select,
+textarea {
+  margin-bottom: 1rem;
+}
+input[type="submit"] {
+  display: flex;
+  width: 401px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  background-color: #214720;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #ffffff;
+}
+select:invalid {
+  color: rgba(33, 71, 32, 0.5);
+
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+label,
+select:valid {
+  color: #214720;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
 }

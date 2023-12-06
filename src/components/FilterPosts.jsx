@@ -8,7 +8,7 @@ export const FilterPosts = () => {
   const selectedCategory = useSelector((state) => state.posts.selectedCategory);
   const dispatch = useDispatch();
   const categoryList = useSelector((state) => state.posts.categoryList);
-  const typeList = ["all", "Available", "Give away", "Needed"];
+  const typeList = ["All","Available", "Give away", "Needed"];
   const handleCategory = (e) => {
     dispatch(setCategory(e.target.value));
   };
@@ -20,6 +20,7 @@ export const FilterPosts = () => {
     <div className="filter">
       {/* <label htmlFor="type">Choose type</label> */}
       <select onChange={handleType}>
+        <option value="" disabled>Borrow/Needed/Give away</option>
         <option value={selectedType}>{selectedType}</option>
         {typeList.map((type, index) =>
           type !== selectedType ? (

@@ -1,124 +1,134 @@
 import { useState } from "react";
 import "./CreatePost.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setNewPostCreated, getPostsList } from "../reducers/postSlice";
+import {
+  setNewPostCreated,
+  getPostsList,
+  createNewPost,
+} from "../reducers/postSlice";
 import { useNavigate } from "react-router-dom";
 
 export const CreatePost = () => {
   const dispatch = useDispatch();
   const redirect = useNavigate();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [contact, setContact] = useState(null);
-  const [category, setCategory] = useState("");
-  const [type, setType] = useState("");
-  const [city, setCity] = useState("");
-  const [CreateNewPostSuccess, setCreateNewPostSuccess] = useState(false);
-  const categoryList = useSelector((state) => state.posts.categoryList);
-  const cityList = useSelector((state) => state.posts.cityList);
-  //   const [image, setImage] = useState(null);
-
-  const createNewPost = async () => {
-    try {
-      const url = "/.netlify/functions/create_post";
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          createdDate: new Date().getTime(),
-          postTitle: title,
-          description: description,
-          contactInfo: contact,
-          type: type,
-          city: city,
-          category: category,
-          //   img:image
-        }),
-      });
-
-      if (response.ok) {
-        const createdPost = await response.json(); // Assuming the server returns the created post data
-        // checking if the a post was newly created
-        setCreateNewPostSuccess(true);
-        console.log("New post created:", createdPost);
-
-        dispatch(setNewPostCreated(true));
-        // Redirect to the page of the newly created post
-        redirect(`/post/${createdPost.id}`);
-      }
-
-      const data = await response.json();
-      console.log(data);
-      console.log("New post created");
-    } catch (error) {
-      console.error("Error creating new post:", error);
-    }
+  const initialState = {
+    postTitle: "",
+    description: "",
+    contactInfo: null,
+    category: "",
+    type: "",
+    city: "",
+    createdDate: null,
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    const newPost = {
-      createdDate: new Date().getTime(),
-      postTitle: title,
-      description: description,
-      contactInfo: contact,
-      type: type,
-      city: city,
-      category: category,
-      //img: image,
-    };
-    createNewPost();
+  const [newPost, setNewPost] = useState(initialState);
+  const categoryList = useSelector((state) => state.posts.categoryList);
+  const cityList = useSelector((state) => state.posts.cityList);
+  const [CreateNewPostSuccess, setCreateNewPostSuccess] = useState(false);
 
+  const handleChange = (key, value) => {
+    setNewPost({ ...newPost, [key]: value });
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setNewPost((prev) => ({ ...prev, createdDate: new Date().getTime() }));
+    await createNewPost();
+    setNewPost((prevState) => ({ ...prevState, ...initialState }));
+    console.log("....", newPost);
     dispatch(getPostsList());
+
+    //
+    // const handleFormSubmit = async (e) => {
+    //   e.preventDefault();
+
+    //   const newPost = {
+    //     createdDate: new Date().getTime(),
+    //     postTitle: title,
+    //     description: description,
+    //     contactInfo: contact,
+    //     type: type,
+    //     city: city,
+    //     category: category,
+    //   };
+    const createdPost = await dispatch(await createNewPost(newPost));
+    setCreateNewPostSuccess(true);
+    dispatch(setNewPostCreated(true));
+    // Redirect to the page of the newly created post
+    console.log("Handle form submit:", createdPost);
+    // dispatch(getPostsList());
+    redirect(`/post/${createdPost.payload._id}`);
   };
 
   return (
     <form className="create-post-form" onSubmit={handleFormSubmit}>
-      <label htmlFor="postTitle">Title for product:</label>
+      <label htmlFor="postTitle">Title for post:</label>
       <input
         type="text"
         id="postTitle"
-        onChange={(e) => setTitle(e.target.value)}
+        required
+        placeholder="What do you want to share?"
+        onChange={(e) => handleChange("postTitle", e.target.value)}
       ></input>
 
       <label htmlFor="description">Description:</label>
       <textarea
         id="description"
-        onChange={(e) => setDescription(e.target.value)}
+        required
+        placeholder="Write a description..."
+        onChange={(e) => handleChange("description", e.target.value)}
       ></textarea>
 
       <label htmlFor="contactInfo">Contact:</label>
       <input
         type="text"
+        required
         id="contactInfo"
-        onChange={(e) => setContact(e.target.value)}
+        placeholder="How to get in touch with you?"
+        onChange={(e) => handleChange("contactInfo", e.target.value)}
       ></input>
 
-      <label htmlFor="type">Borrow, lend or give away?</label>
-      <select id="type" onChange={(e) => setType(e.target.value)}>
-        <option value="">choose one type</option>
+      <label htmlFor="type">Do you want to borrow, lend or give away?</label>
+      <select
+        id="type"
+        required
+        onChange={(e) => handleChange("type", e.target.value)}
+      >
+        <option value="" disabled>
+          Borrow, lend or give away?
+        </option>
         <option value="Needed">Needed</option>
         <option value="Available">Available</option>
         <option value="Give away">Give away</option>
       </select>
 
       <label htmlFor="category">Categories</label>
-      <select id="category" onChange={(e) => setCategory(e.target.value)}>
-        {categoryList.map((category, index) => (
+      <select
+        id="category"
+        required
+        onChange={(e) => handleChange("category", e.target.value)}
+      >
+        <option value="" disabled>
+          Choose category
+        </option>
+        {categoryList.slice(1).map((category, index) => (
           <option key={index}>{category}</option>
         ))}
       </select>
       <label htmlFor="category">Select city</label>
-      <select id="category" onChange={(e) => setCity(e.target.value)}>
+      <select
+        id="category"
+        required
+        onChange={(e) => handleChange("city", e.target.value)}
+      >
+        <option value="" disabled>
+          Choose a city
+        </option>
         {cityList.slice(1).map((city, index) => (
           <option key={index}>{city}</option>
         ))}
       </select>
-      {/* { <label htmlFor="image">Upload Image:</label>
-      <input type="file" id="image" onChange={(e)=> setImage(e.target.files[0])} /> */}
-      <input type="submit" value="Create post" />
+      <input type="submit" value="Create post" className="submit" />
     </form>
   );
 };
