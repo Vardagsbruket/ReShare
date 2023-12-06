@@ -62,29 +62,41 @@ export const CreatePost = () => {
 
   return (
     <form className="create-post-form" onSubmit={handleFormSubmit}>
-      <label htmlFor="postTitle">Title for product:</label>
+      <label htmlFor="postTitle">Title for post:</label>
       <input
         type="text"
         id="postTitle"
+        required
+        placeholder="What do you want to share?"
         onChange={(e) => handleChange("postTitle", e.target.value)}
       ></input>
 
       <label htmlFor="description">Description:</label>
       <textarea
         id="description"
+        required
+        placeholder="Write a description..."
         onChange={(e) => handleChange("description", e.target.value)}
       ></textarea>
 
       <label htmlFor="contactInfo">Contact:</label>
       <input
         type="text"
+        required
         id="contactInfo"
+        placeholder="How to get in touch with you?"
         onChange={(e) => handleChange("contactInfo", e.target.value)}
       ></input>
 
-      <label htmlFor="type">Borrow, lend or give away?</label>
-      <select id="type" onChange={(e) => handleChange("type", e.target.value)}>
-        <option value="">choose one type</option>
+      <label htmlFor="type">Do you want to borrow, lend or give away?</label>
+      <select
+        id="type"
+        required
+        onChange={(e) => handleChange("type", e.target.value)}
+      >
+        <option value="" disabled>
+          Borrow, lend or give away?
+        </option>
         <option value="Needed">Needed</option>
         <option value="Available">Available</option>
         <option value="Give away">Give away</option>
@@ -93,9 +105,12 @@ export const CreatePost = () => {
       <label htmlFor="category">Categories</label>
       <select
         id="category"
+        required
         onChange={(e) => handleChange("category", e.target.value)}
       >
-        <option value="">choose category</option>
+        <option value="" disabled>
+          Choose category
+        </option>
         {categoryList.slice(1).map((category, index) => (
           <option key={index}>{category}</option>
         ))}
@@ -103,16 +118,17 @@ export const CreatePost = () => {
       <label htmlFor="category">Select city</label>
       <select
         id="category"
+        required
         onChange={(e) => handleChange("city", e.target.value)}
       >
-        <option value="">Select city</option>
+        <option value="" disabled>
+          Choose a city
+        </option>
         {cityList.slice(1).map((city, index) => (
           <option key={index}>{city}</option>
         ))}
       </select>
-      {/* { <label htmlFor="image">Upload Image:</label>
-      <input type="file" id="image" onChange={(e)=> setImage(e.target.files[0])} /> */}
-      <input type="submit" value="Create post" />
+      <input type="submit" value="Create post" className="submit" />
     </form>
   );
 };
