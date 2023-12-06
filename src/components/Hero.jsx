@@ -1,5 +1,5 @@
 import { FilterCity } from "./FilterCity";
-import "./hero.css";
+import "./Hero.css";
 
 export const Hero = () => {
   return (
