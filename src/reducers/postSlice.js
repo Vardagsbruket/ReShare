@@ -41,13 +41,18 @@ export const getPostsList = createAsyncThunk(
   "posts/getPostsList",
   async (payload, thunkAPI) => {
     try {
-      const response = await fetch("http://localhost:6001/posts");
-     if (!response.ok) {
+      const response = await fetch("/.netlify/functions/get_posts", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
       const data = await response.json();
-      console.log(data);
+      console.log("get_posts data : ", data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue("something went wrong");
