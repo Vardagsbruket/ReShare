@@ -21,7 +21,7 @@ export default async (req, context) => {
     console.time("connected to db. finding...");
     const results = await collection.find({}).toArray();
     console.timeEnd("connected to db. finding...");
-    console.log(results);
+    // console.log(results);
     const test = new Response(JSON.stringify(results), {
       headers: {
         "content-type": "application/json",

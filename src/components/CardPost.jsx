@@ -49,8 +49,6 @@ export const CardPost = ({ post }) => {
       imgPlaceHolder = other;
   }
 
-  console.log(post.category);
-
   return (
     <>
       <div className={`cardPost ${post.type}`}>

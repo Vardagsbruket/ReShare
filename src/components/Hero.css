@@ -34,7 +34,10 @@
 }
 
 .hero-wrapper div {
-  display:flex;
+  display: flex;
   flex-direction: column;
   max-width: 300px;
+}
+.bold {
+  font-weight: 700;
 }

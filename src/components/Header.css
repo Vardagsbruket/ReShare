@@ -6,6 +6,7 @@
   background-color: #ece4d9;
   border-radius: 20px;
   padding: 40px 50px 40px 50px;
+  position: relative;
 }
 .logo {
   text-decoration: none;
@@ -36,11 +37,11 @@
   gap: 8px;
   border-radius: 4px;
   background: #214720;
-  color: #ffffff;
+  color: white;
   text-decoration: none;
   border: 2px solid #214720;
 }
-.about {
+.about-link {
   text-decoration: none;
   color: #214720;
 }
@@ -55,4 +56,34 @@ p {
 
 .navBar .active {
   text-decoration: underline;
+}
+
+.navBar.sidebar {
+  width: 350px;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .menu-icon {
+    display: block;
+  }
+  .navBar {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    background-color: #fbfaf7;
+    width: 0px;
+    height: calc(100vh - 60px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+  }
+  .navBar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }

@@ -22,8 +22,13 @@ export const ListPosts = () => {
       );
     };
 
-    const allfilteredPosts = postList.filter(filterFunction);
-    setFilteredPosts(allfilteredPosts);
+    const allFilteredPosts = postList.filter(filterFunction);
+
+    const sortedPosts = [...allFilteredPosts].sort(
+      (a, b) => b.createdDate - a.createdDate
+    );
+
+    setFilteredPosts(sortedPosts);
   }, [category, type, city, postList]);
 
   return (
@@ -36,7 +41,7 @@ export const ListPosts = () => {
         </div>
       ) : (
         <section className="list-post-container">
-          {filteredPosts.reverse().map((post) => (
+          {filteredPosts.map((post) => (
             <CardPost key={post.id} post={post} />
           ))}
         </section>

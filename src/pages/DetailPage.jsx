@@ -5,6 +5,7 @@ import "./DetailPage.css";
 import { useEffect, useState } from "react";
 import { Loading } from "../components/Loading";
 import { CreatePostBanner } from "../components/CreatePostBanner";
+import { setNewPostCreated } from "../reducers/postSlice";
 
 import clothes from "../assets/clothes_1x.webp";
 import furniture from "../assets/furniture_1x.webp";
@@ -19,6 +20,7 @@ import toys from "../assets/toys_1x.webp";
 
 export const DetailPage = () => {
   const isNewPostCreated = useSelector((state) => state.posts.isNewPostCreated);
+  const dispatch = useDispatch();
 
   const [isFetched, setIsFetched] = useState(false);
 
@@ -28,12 +30,22 @@ export const DetailPage = () => {
   const postList = useSelector((state) => state.posts.postsList);
 
   useEffect(() => {
+    // Reset isNewPostCreated to false after it has been used
+    if (isNewPostCreated) {
+      const timer = setTimeout(() => {
+        // setNewPostCreated as false after 5 seconds
+        dispatch(setNewPostCreated(false));
+      }, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, [dispatch, isNewPostCreated]);
+
+  useEffect(() => {
     const fetchList = async () => {
       setIsFetched(false);
       const foundPost = await postList.find((post) => post._id === postId);
       setPost(foundPost);
       setIsFetched(true);
-      console.log("created date:", post.createdDate);
     };
 
     fetchList();
