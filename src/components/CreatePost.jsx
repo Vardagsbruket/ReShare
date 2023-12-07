@@ -42,9 +42,6 @@ export const CreatePost = () => {
     e.preventDefault();
     const currentDate = new Date().getTime();
 
-    // console.log("createdDtate :", newPost.createdDate);
-    // console.log("created date now", currentDate);
-
     handleChange("createdDate", currentDate);
 
     // setNewPost((prev) => ({ ...prev, createdDate: currentDate }));

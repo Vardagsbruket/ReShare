@@ -111,7 +111,9 @@ export const DetailPage = () => {
                   <p className="medium-text">Contact</p>
                   <p className="small-text">{post.contactInfo}</p>
                   <p className="medium-text">Creation date</p>
-                  <p className="small-text">{post.createdDate}</p>
+                  <p className="small-text">
+                    {new Date(post.createdDate).toLocaleDateString()}
+                  </p>
                   <div>
                     <FacebookShareButton
                       url={`https://stirring-florentine-c4bb3f.netlify.app/post/${post._id}`}
