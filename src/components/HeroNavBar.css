@@ -1,0 +1,32 @@
+.hero-navbar-container {
+  width: 100%;
+  padding: 32px 52px;
+  background-color: #2147201a;
+  border-radius: 20px;
+}
+.hero-navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.hero-navbar ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%; /* Ensure the list takes up the full width */
+}
+.hero-navbar li {
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+}
+.hero-navbar .navlink {
+  text-decoration: none;
+  color: #214720;
+}
