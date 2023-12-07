@@ -47,7 +47,7 @@ export const getPostsList = createAsyncThunk(
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      console.log("get_posts data : ", data);
+      //console.log("get_posts data : ", data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue("something went wrong");
@@ -102,7 +102,7 @@ const posts = createSlice({
       })
       .addCase(getPostsList.fulfilled, (state, action) => {
         state.isLoading = false;
-        console.log("in extra reducer", action.payload);
+
         state.postsList = action.payload;
       })
       .addCase(getPostsList.rejected, (state, action) => {
@@ -110,7 +110,6 @@ const posts = createSlice({
       })
       .addCase(createNewPost.fulfilled, (state, action) => {
         state.postsList.push(action.payload);
-        console.log("Created post extra reducer:", action.payload);
       });
   },
 });

@@ -18,18 +18,18 @@ export const StartPagePosts = () => {
     } else {
       allfilteredPosts = postList?.filter((post) => post.type === "Needed");
     }
-    setFilteredPosts(allfilteredPosts);
+    const sortedPosts = [...allfilteredPosts].sort(
+      (a, b) => b.createdDate - a.createdDate
+    );
+    setFilteredPosts(sortedPosts);
   }, [selectedCity, postList]);
 
   return (
     <>
       <section className="list-post-container startpage-list-post-container">
-        {filteredPosts
-          .reverse()
-          .slice(0, 7)
-          .map((post) => (
-            <CardPost key={post.id} post={post} />
-          ))}
+        {filteredPosts.slice(0, 7).map((post) => (
+          <CardPost key={post._id} post={post} />
+        ))}
       </section>
     </>
   );

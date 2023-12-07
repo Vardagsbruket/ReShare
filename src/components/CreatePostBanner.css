@@ -3,6 +3,7 @@
   padding: 2rem 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: rgba(33, 71, 32, 0.1);
   border-radius: 20px;
   animation: banner-animation 400ms;
@@ -11,6 +12,20 @@
   font-weight: 500;
   font-size: 20px;
   color: rgba(33, 71, 32, 1);
+}
+.hero-animation {
+  animation-delay: hero-animation 400ms;
+  animation: hero-animation 400ms;
+  margin-left: 40px;
+}
+
+@keyframes hero-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes banner-animation {

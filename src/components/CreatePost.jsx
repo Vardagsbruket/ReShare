@@ -18,7 +18,7 @@ export const CreatePost = () => {
     category: "",
     type: "",
     city: "",
-    createdDate: null,
+    createdDate: new Date().getTime(),
   };
 
   const [newPost, setNewPost] = useState(initialState);
@@ -26,22 +26,31 @@ export const CreatePost = () => {
   const cityList = useSelector((state) => state.posts.cityList);
   const [CreateNewPostSuccess, setCreateNewPostSuccess] = useState(false);
 
+  // const handleChange = (key, value) => {
+  //   setNewPost({ ...newPost, [key]: value });
+  // };
+
   const handleChange = (key, value) => {
-    setNewPost({ ...newPost, [key]: value });
+    if (key === "createdDate") {
+      setNewPost({ ...newPost, createdDate: value });
+    } else {
+      setNewPost({ ...newPost, [key]: value });
+    }
   };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    setNewPost((prev) => ({ ...prev, createdDate: new Date().getTime() }));
-    await createNewPost();
-    setNewPost((prevState) => ({ ...prevState, ...initialState }));
-    console.log("....", newPost);
-    dispatch(getPostsList());
+    const currentDate = new Date().getTime();
 
+    handleChange("createdDate", currentDate);
+
+    // setNewPost((prev) => ({ ...prev, createdDate: currentDate }));
+
+    // setNewPost((prevState) => ({ ...prevState, ...initialState }));
     const createdPost = await dispatch(await createNewPost(newPost));
+    dispatch(getPostsList());
     setCreateNewPostSuccess(true);
     dispatch(setNewPostCreated(true));
-
     redirect(`/post/${createdPost.payload._id}`);
   };
 
