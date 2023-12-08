@@ -73,8 +73,19 @@ To contribute or run this project locally, follow these steps:
     npm install @reduxjs/toolkit
     npm install react-router-dom
     ```
+4. **Social Media Integration:**
 
-4. **Setting Up ReShare Server and Social Media Integration:**
+  - **Installing Social Media Integration:**
+        ```bash
+        npm install react-share
+        ```
+
+5. **Setting Up ReShare Server:** (Choose one setup)
+   
+   For setting up the server choose one of the following. But keep in mind it will come with a shortcomming of deplying the project in netlify.
+   
+   ## For setting the Fake api.
+   A json file is used for this setup which acts as a fake server. The POST and GET requests can be used like anyother api.
 
    - **Installing Server Dependencies:**
         ```bash
@@ -93,12 +104,9 @@ To contribute or run this project locally, follow these steps:
         }
         ```
 
-   - **Installing Social Media Integration:**
-        ```bash
-        npm install react-share
-        ```
-
    - **Running the Development Server:**
         ```bash
         npm run devserver
         ```
+ ## For setting the MongoDB.
+ 
