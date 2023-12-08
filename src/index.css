@@ -24,6 +24,11 @@ body {
   -webkit-font-smoothing: antialiased;
   height: 100%;
 }
+/* select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+} */
 
 img,
 svg {

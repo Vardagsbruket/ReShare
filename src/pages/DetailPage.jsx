@@ -116,7 +116,7 @@ export const DetailPage = () => {
               <div className="img-container">
                 <img src={imgPlaceHolder} alt="" />
               </div>
-              <div className="detail-post-wrapper">
+              <div className={`detail-post-wrapper ${post.type}`}>
                 <div className="type">
                   <span>
                     <img src={typeIcon} alt="icons-svg" className="typeIcons" />

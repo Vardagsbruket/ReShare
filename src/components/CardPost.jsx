@@ -72,15 +72,15 @@ export const CardPost = ({ post }) => {
           <Link to={`/post/${post._id}`}>
             <img src={imgPlaceHolder} />
             <div className="card-text">
+              <h2 className="post-title">{post.postTitle}</h2>
+              <h3 className="post-city">{post.city}</h3>
+              <p className="post-type-category">{post.category}</p>
               <span className="typeIconsWrapper">
                 <span>
                   <img src={typeIcon} alt="icons-svg" className="typeIcons" />
                 </span>
                 <p>{post.type} </p>
               </span>
-              <h2 className="post-title">{post.postTitle}</h2>
-              <h3 className="post-city">{post.city}</h3>
-              <p className="post-type-category">{post.category}</p>
             </div>
           </Link>
         </div>

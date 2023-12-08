@@ -101,11 +101,11 @@ export const HeroNavBar = () => {
               </li>
             </NavLink>
           </div>
-          <div className="navLink-div">
-            <NavLink to="/browse-posts" className="navlink" id="last">
+          <div className="navLink-div" id="last">
+            <NavLink to="/browse-posts" className="navlink">
               <li onClick={() => handleClick("All")}>
                 <img src={arrowright} />
-                All
+                See all
               </li>
             </NavLink>
           </div>

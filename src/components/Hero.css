@@ -28,6 +28,10 @@
   border: 2px solid #214720;
   background: #fff;
 }
+.hero-container option {
+  display: flex;
+  justify-content: space-between;
+}
 
 .hero-wrapper {
   max-width: 60%;

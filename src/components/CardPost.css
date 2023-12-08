@@ -24,12 +24,17 @@
 }
 .cardPost .typeIcons {
   max-width: 24px;
+  margin-right: 8px;
   border: none;
 }
 .Available {
-  background-color: #2147201a;
+  background-color: #e9ede9;
 }
 .Available a {
+  text-decoration: none;
+  color: #214720;
+}
+.Available .card-text p {
   text-decoration: none;
   color: #214720;
 }
@@ -47,11 +52,22 @@
   text-decoration: none;
   color: #5299d3;
 }
+.Give .card-text p,
+.Give .card-text h2,
+.Give .card-text h3 {
+  color: #5299d3;
+}
 .Needed {
   background-color: #cc58031a;
+  color: #cc5803;
 }
 .Needed a {
   text-decoration: none;
+  color: #cc5803;
+}
+.Needed .card-text p,
+.Needed .card-text h2,
+.Needed .card-text h3 {
   color: #cc5803;
 }
 
@@ -82,6 +98,9 @@
   align-items: center;
   padding: 4px;
   margin-right: 8px;
+}
+.typeIconsWrapper p {
+  font-size: 16px;
 }
 
 .cardPost :hover {
