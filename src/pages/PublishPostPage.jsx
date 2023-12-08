@@ -2,7 +2,7 @@ import { CreatePost } from "../components/CreatePost";
 
 export const PublishPostPage = () => {
   return (
-    <div>
+    <div className="create-post-container">
       <CreatePost />
     </div>
   );

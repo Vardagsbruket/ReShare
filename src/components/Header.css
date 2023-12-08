@@ -73,13 +73,15 @@ p {
   }
   .navBar {
     position: absolute;
-    right: 0;
-    top: 0px;
+    right: 40px;
+    top: 80px;
     background-color: #fbfaf7;
     width: 0px;
-    height: calc(100vh - 60px);
+    height: calc(300px - 60px);
     transition: all 0.3s ease-in;
     overflow: hidden;
+    padding-top: 24px;
+    border-radius: 20px;
   }
   .navBar ul {
     display: flex;

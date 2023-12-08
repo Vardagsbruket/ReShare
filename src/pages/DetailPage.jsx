@@ -17,6 +17,9 @@ import tools from "../assets/tools_1x.webp";
 import vehicles from "../assets/vehicles_1x.webp";
 import interior from "../assets/interior_1x.webp";
 import toys from "../assets/toys_1x.webp";
+import available from "../assets/icons/available.svg";
+import giveaway from "../assets/icons/giveaway.svg";
+import needed from "../assets/icons/Needed.svg";
 
 export const DetailPage = () => {
   const isNewPostCreated = useSelector((state) => state.posts.isNewPostCreated);
@@ -52,6 +55,19 @@ export const DetailPage = () => {
   }, [postId, postList]);
 
   let imgPlaceHolder = "";
+  let typeIcon = "";
+
+  switch (post?.type) {
+    case "Needed":
+      typeIcon = needed;
+      break;
+    case "Give away":
+      typeIcon = giveaway;
+      break;
+    case "Available":
+      typeIcon = available;
+      break;
+  }
   switch (post?.category) {
     case "Vehicles":
       imgPlaceHolder = vehicles;
@@ -100,8 +116,13 @@ export const DetailPage = () => {
               <div className="img-container">
                 <img src={imgPlaceHolder} alt="" />
               </div>
-              <div className="detail-post-wrapper">
-                <p className="type">{post.type}</p>
+              <div className={`detail-post-wrapper ${post.type}`}>
+                <div className="type">
+                  <span>
+                    <img src={typeIcon} alt="icons-svg" className="typeIcons" />
+                  </span>
+                  <p>{post.type}</p>
+                </div>
                 <h2 className="title">{post.postTitle}</h2>
                 <p className="medium-text">
                   {post.category} | {post.city}

@@ -20,6 +20,27 @@
   width: 48%;
   border-radius: 20px;
 }
+.detail-post-wrapper.Available {
+  background-color: #d3dad2;
+}
+.detail-post-wrapper.Needed {
+  background-color: #f5decd;
+}
+
+.detail-post-wrapper.Needed p,
+.detail-post-wrapper.Needed h2 {
+  color: #cc5803;
+}
+
+.detail-post-wrapper.Give {
+  background-color: #dcebf6;
+}
+
+.detail-post-wrapper.Give p,
+.detail-post-wrapper.Give h2 {
+  color: #5299d3;
+}
+
 .detail-flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -39,6 +60,7 @@
 }
 .img-container img {
   border-radius: 20px;
+  width: 100%;
 }
 .detail-text-container {
   margin-top: 40px;
@@ -48,6 +70,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: 113.5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
 }
 .title {
   font-size: 40px;

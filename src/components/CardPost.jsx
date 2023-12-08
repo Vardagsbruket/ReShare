@@ -10,9 +10,25 @@ import tools from "../assets/tools_1x.webp";
 import vehicles from "../assets/vehicles_1x.webp";
 import interior from "../assets/interior_1x.webp";
 import toys from "../assets/toys_1x.webp";
+import available from "../assets/icons/available.svg";
+import giveaway from "../assets/icons/giveaway.svg";
+import needed from "../assets/icons/Needed.svg";
 
 export const CardPost = ({ post }) => {
   let imgPlaceHolder = "";
+  let typeIcon = "";
+
+  switch (post.type) {
+    case "Needed":
+      typeIcon = needed;
+      break;
+    case "Give away":
+      typeIcon = giveaway;
+      break;
+    case "Available":
+      typeIcon = available;
+      break;
+  }
 
   switch (post.category) {
     case "Vehicles":
@@ -58,9 +74,13 @@ export const CardPost = ({ post }) => {
             <div className="card-text">
               <h2 className="post-title">{post.postTitle}</h2>
               <h3 className="post-city">{post.city}</h3>
-              <p className="post-type-category">
-                {post.type} - {post.category}
-              </p>
+              <p className="post-type-category">{post.category}</p>
+              <span className="typeIconsWrapper">
+                <span>
+                  <img src={typeIcon} alt="icons-svg" className="typeIcons" />
+                </span>
+                <p>{post.type} </p>
+              </span>
             </div>
           </Link>
         </div>
