@@ -9,7 +9,7 @@
 }
 .cardPost img {
   border-radius: 20px 20px 0px 0px;
-  border: 2px solid #ECE4D9;
+  border: 2px solid #ece4d9;
   width: 100%;
 }
 .card-text {
@@ -21,6 +21,10 @@
   font-size: 20px;
   font-style: normal;
   margin: 24px 32px 24px 32px;
+}
+.cardPost .typeIcons {
+  max-width: 24px;
+  border: none;
 }
 .Available {
   background-color: #2147201a;
@@ -68,6 +72,16 @@
   font-weight: 500;
   line-height: 113.5%;
   margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.typeIconsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  padding: 4px;
+  margin-right: 8px;
 }
 
 .cardPost :hover {

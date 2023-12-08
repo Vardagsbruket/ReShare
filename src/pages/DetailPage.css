@@ -48,6 +48,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: 113.5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
 }
 .title {
   font-size: 40px;

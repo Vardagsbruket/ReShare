@@ -3,6 +3,7 @@
   padding: 32px 52px;
   background-color: #2147201a;
   border-radius: 20px;
+  overflow: scroll;
 }
 .hero-navbar {
   display: flex;
@@ -29,4 +30,20 @@
 .hero-navbar .navlink {
   text-decoration: none;
   color: #214720;
+
+  max-height: 52px;
+
+  text-align: center;
+}
+.navLink-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: fit-content;
+  padding: 0px 25px;
+  border-right: 1px solid #214720;
+}
+
+#last {
+  border: none;
 }

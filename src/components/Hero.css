@@ -41,3 +41,17 @@
 .bold {
   font-weight: 700;
 }
+@media screen and (max-width: 1024px) {
+  .hero-container h1 {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container h1 {
+    font-size: 28px;
+  }
+  .hero-wrapper {
+    max-width: 100%;
+  }
+}
