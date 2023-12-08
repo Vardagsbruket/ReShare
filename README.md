@@ -11,11 +11,9 @@
    - [Fork and Clone the Repository](#1-fork-and-clone-the-repository)
    - [Install Dependencies](#2-install-dependencies)
    - [Install Additional Dependencies](#3-install-additional-dependencies)
-   - [Setting Up ReShare Server and Social Media Integration](#4-setting-up-reshare-server-and-social-media-integration)
-      - [Installing Server Dependencies](#installing-server-dependencies)
-      - [Package.json Configuration](#packagejson-configuration)
-      - [Installing Social Media Integration](#installing-social-media-integration)
-      - [Running the Development Server](#running-the-development-server)
+   - [Social Media Integration](#4-social-media-integration)
+   - [Setting Up ReShare Server](#5-setting-up-reshare-server)
+      - [Setting the Fake API](#setting-the-Fake-API)
       - [Setting Up MongoDB](#setting-up-mongodb)
 
 # ReShare - A Collaborative Project
@@ -82,7 +80,7 @@ To contribute or run this project locally, follow these steps:
    
    For setting up the server, choose one of the following. But keep in mind it will come with a shortcoming of deploying the project on Netlify for the Fake API.
 
-   1. **For setting the Fake API**
+   1. **Setting the Fake API**
       A JSON file is used for this setup, which acts as a fake server. The POST and GET requests can be used like any other API.
 
       - **Installing Server Dependencies:**
@@ -127,6 +125,12 @@ To contribute or run this project locally, follow these steps:
       - Get the siteId from the deployment setting page.
       - Paste the siteId value as a string in the `.netlify/state.json` file with “siteId” as the key.
       - Install Netlify-cli
+        
+         ```bash
+        npm install netlify-cli --save-dev
+         ```
+         or
+        
          ```bash
          npm install -g netlify-cli
          ```
