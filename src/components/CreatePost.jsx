@@ -86,7 +86,9 @@ export const CreatePost = () => {
         required
         onChange={(e) => handleChange("type", e.target.value)}
       >
-        <option value="">Choose one type</option>
+        <option value="" disabled selected>
+          Choose one type
+        </option>
         <option value="Needed">Needed</option>
         <option value="Available">Available</option>
         <option value="Give away">Give away</option>
@@ -98,7 +100,7 @@ export const CreatePost = () => {
         required
         onChange={(e) => handleChange("category", e.target.value)}
       >
-        <option value="" disabled>
+        <option value="" disabled selected>
           Choose category
         </option>
         {categoryList.slice(1).map((category, index) => (
@@ -111,7 +113,7 @@ export const CreatePost = () => {
         required
         onChange={(e) => handleChange("city", e.target.value)}
       >
-        <option value="" disabled>
+        <option value="" disabled selected>
           Choose a city
         </option>
         {cityList.slice(1).map((city, index) => (

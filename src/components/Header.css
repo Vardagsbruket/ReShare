@@ -59,7 +59,7 @@ p {
 }
 
 .navBar.sidebar {
-  width: 350px;
+  width: 250px;
 }
 
 .menu-icon {
@@ -67,7 +67,7 @@ p {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 800px) {
   .menu-icon {
     display: block;
   }
@@ -77,7 +77,7 @@ p {
     top: 80px;
     background-color: #fbfaf7;
     width: 0px;
-    height: calc(300px - 60px);
+    height: calc(280px - 60px);
     transition: all 0.3s ease-in;
     overflow: hidden;
     padding-top: 24px;
