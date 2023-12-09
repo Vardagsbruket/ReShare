@@ -11,15 +11,12 @@
    - [Fork and Clone the Repository](#1-fork-and-clone-the-repository)
    - [Install Dependencies](#2-install-dependencies)
    - [Install Additional Dependencies](#3-install-additional-dependencies)
-   - [Setting Up ReShare Server and Social Media Integration](#4-setting-up-reshare-server-and-social-media-integration)
-      - [Installing Server Dependencies](#installing-server-dependencies)
-      - [Package.json Configuration](#packagejson-configuration)
-      - [Installing Social Media Integration](#installing-social-media-integration)
-      - [Running the Development Server](#running-the-development-server)
+   - [Social Media Integration](#4-social-media-integration)
+   - [Setting Up ReShare Server](#5-setting-up-reshare-server)
+      - [Setting the Fake API](#setting-the-Fake-API)
+      - [Setting Up MongoDB](#setting-up-mongodb)
 
 # ReShare - A Collaborative Project
-
-Welcome to ReShare, a collaborative effort by [Filza Saleem](https://github.com/filzasaleem), [Diana Unden](https://github.com/Vardagsbruket), and [Joona Miettinen](https://github.com/joona-3), developed as the final project for Technigo's upskill course in JavaScript and React.
 
 ## Experience ReShare
 
@@ -31,7 +28,7 @@ Welcome to ReShare, our final project developed during Technigo's upskill course
 
 ## Mission
 
-Our primary objective is to contribute to the global effort of mitigating overconsumption. ReShare provides a platform where neighbors can connect to lend each other seldom-used items, fostering a sense of community and reducing the need for individual ownership. Examples include drilling machines, car trailers, skis, and more. The app enables users to share items they have available for lending or express their need to borrow something. Additionally, we've integrated a feature to facilitate the giving away of items that are no longer needed but still hold value.
+Our primary objective is to contribute to the global effort of mitigating overconsumption.
 
 ## Key Features
 
@@ -59,7 +56,7 @@ To contribute or run this project locally, follow these steps:
 1. **Fork and Clone the Repository:**
     ```bash
     git clone https://github.com/Vardagsbruket/ReShare
-    cd your-repo
+    cd ReShare
     ```
 
 2. **Install Dependencies:**
@@ -69,10 +66,9 @@ To contribute or run this project locally, follow these steps:
 
 3. **Install Additional Dependencies:**
     ```bash
-    npm install react-redux
-    npm install @reduxjs/toolkit
-    npm install react-router-dom
+    npm install react-redux @reduxjs/toolkit react-router-dom
     ```
+
 4. **Social Media Integration:**
 
   - **Installing Social Media Integration:**
@@ -82,17 +78,17 @@ To contribute or run this project locally, follow these steps:
 
 5. **Setting Up ReShare Server:** (Choose one setup)
    
-   For setting up the server choose one of the following. But keep in mind it will come with a shortcomming of deplying the project in netlify.
-   
-   ## For setting the Fake api.
-   A json file is used for this setup which acts as a fake server. The POST and GET requests can be used like anyother api.
+   For setting up the server, choose one of the following. But keep in mind it will come with a shortcoming of deploying the project on Netlify for the Fake API.
 
-   - **Installing Server Dependencies:**
+   1. **Setting the Fake API**
+      A JSON file is used for this setup, which acts as a fake server. The POST and GET requests can be used like any other API.
+
+      - **Installing Server Dependencies:**
         ```bash
         npm install json-server concurrently
         ```
 
-   - **Package.json Configuration:**
+      - **Package.json Configuration:**
         Add the following lines to your `package.json` file:
         ```json
         {
@@ -104,9 +100,47 @@ To contribute or run this project locally, follow these steps:
         }
         ```
 
-   - **Running the Development Server:**
+      - **Running the Development Server:**
         ```bash
         npm run devserver
         ```
- ## For setting the MongoDB.
- 
+
+   2. **For setting up MongoDB**
+      For setting up MongoDB for the project, follow the following steps:
+
+      - Signup for a free account on MongoDB Atlas.
+      - Create an M0 Shared Free cluster. Recommend choosing a location in US-East on AWS as Netlify functions are hosted there, but not an issue to choose something else.
+      - Add access via a user and password. Save the password somewhere (careful to not add it to somewhere in your project where it will be publicly uploaded on Github).
+      - Once the cluster is deployed, go to Network Settings. You need to allow access for all IP addresses for Netlify, not just your local IP address.
+      - Go to the Database tab, click on the connect button, then VScode MongoDB. Copy the URI somewhere. Replace the full `<password>` with the one you saved.
+      - Download MongoDB VScode extension.
+      - Connect to MongoDB by pasting the URI you have saved and run the playground to populate the Database with a few posts.
+      - Go to MongoDB Atlas, Deployment database tab, connect button, connect via MongoDB driver Node.js. Copy the URI and replace the password again.
+      - Go to your Netlify account and connect your fork of the project to a site deployment.
+      - Go to the Deployment settings tab and environment variables. Add 3 environment variables as follows:
+        a. key: MONGODB_URI, value: The URI you have gotten for connection via Node.js driver.
+        b. key: MONGODB_DATABASE, value: The name in the first use() in the playground.
+        c. key: MONGODB_COLLECTION, value: posts.
+      - Don’t put the quotation marks for a string when you paste the env variable on Netlify.
+      - Get the siteId from the deployment setting page.
+      - Paste the siteId value as a string in the `.netlify/state.json` file with “siteId” as the key.
+      - Install Netlify-cli
+        
+         ```bash
+        npm install netlify-cli --save-dev
+         ```
+         or
+        
+         ```bash
+         npm install -g netlify-cli
+         ```
+
+      - **Running the Development Server:**
+        
+        ```bash
+        npm run netlifydev
+        ```
+        or
+         ```bash
+         netlify dev
+        ```
