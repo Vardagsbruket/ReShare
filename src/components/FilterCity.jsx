@@ -13,9 +13,7 @@ export const FilterCity = () => {
     <div>
       <label htmlFor="city">Select a city </label>
       <select id="city" onChange={handleSelect}>
-        <option value="selectedCity">
-          <span id="dropdown">{selectedCity}</span>
-        </option>
+        <option value="selectedCity">{selectedCity}</option>
         {cityList.map((city, index) =>
           city !== selectedCity ? <option key={index}>{city}</option> : ""
         )}
