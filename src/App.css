@@ -3,3 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+}
