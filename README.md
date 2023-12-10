@@ -68,6 +68,10 @@ To contribute or run this project locally, follow these steps:
     ```bash
     npm install react-redux @reduxjs/toolkit react-router-dom
     ```
+   ```bach
+    npm install lottie-react
+      ```
+
 
 4. **Social Media Integration:**
 
