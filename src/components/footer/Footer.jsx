@@ -13,7 +13,7 @@ export const Footer = () => {
         <p>Share this page on social media </p>
         <FacebookShareButton
           url={`https://stirring-florentine-c4bb3f.netlify.app/`}
-          aria-aria-label="facebook button"
+          aria-label="facebook button"
         >
           <FacebookIcon size={32} round />
         </FacebookShareButton>

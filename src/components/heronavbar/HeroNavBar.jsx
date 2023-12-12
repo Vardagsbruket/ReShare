@@ -30,14 +30,14 @@ export const HeroNavBar = () => {
               className="navlink"
             >
               <li onClick={() => handleClick("Furniture")}>
-                <img src={furniture} alt="funiture" /> Furniture
+                <img src={furniture} alt="image of sofa" /> Furniture
               </li>
             </NavLink>
           </div>
           <div className="navLink-div">
             <NavLink to="/browse-posts" className="navlink">
               <li onClick={() => handleClick("Vehicles")}>
-                <img src={vehicles} alt="vehicle" />
+                <img src={vehicles} alt="image of car" />
                 Vehicles
               </li>
             </NavLink>
@@ -45,7 +45,7 @@ export const HeroNavBar = () => {
           <div className="navLink-div">
             <NavLink to="/browse-posts" className="navlink">
               <li onClick={() => handleClick("Clothes & shoes")}>
-                <img src={clothes} alt="clothes-shoes" />
+                <img src={clothes} alt="image of sweater" />
                 Clothes & <br />
                 Shoes
               </li>
@@ -54,7 +54,7 @@ export const HeroNavBar = () => {
           <div className="navLink-div">
             <NavLink to="/browse-posts" className="navlink">
               <li onClick={() => handleClick("Tools & machines")}>
-                <img src={tools} alt="tools-machine" />
+                <img src={tools} alt="image of screwdriver" />
                 Tools & <br />
                 machines
               </li>
@@ -63,7 +63,7 @@ export const HeroNavBar = () => {
           <div className="navLink-div">
             <NavLink to="/browse-posts" className="navlink">
               <li onClick={() => handleClick("Interior")}>
-                <img src={interior} alt="interior" />
+                <img src={interior} alt="image of house" />
                 Interior
               </li>
             </NavLink>
@@ -71,7 +71,7 @@ export const HeroNavBar = () => {
           <div className="navLink-div">
             <NavLink to="/browse-posts" className="navlink">
               <li onClick={() => handleClick("Sports & hobby")}>
-                <img src={sports} alt="sports-hobby" />
+                <img src={sports} alt="image of football" />
                 Sports & <br />
                 Hobby
               </li>
@@ -80,7 +80,7 @@ export const HeroNavBar = () => {
           <div className="navLink-div">
             <NavLink to="/browse-posts" className="navlink">
               <li onClick={() => handleClick("Kitchen appliances")}>
-                <img src={kitchen} alt="kitchen" />
+                <img src={kitchen} alt="image of plate and fork" />
                 Kitchen
               </li>
             </NavLink>
@@ -88,7 +88,7 @@ export const HeroNavBar = () => {
           <div className="navLink-div">
             <NavLink to="/browse-posts" className="navlink">
               <li onClick={() => handleClick("Garden")}>
-                <img src={garden} alt="garden" />
+                <img src={garden} alt="image of flower" />
                 Garden
               </li>
             </NavLink>
@@ -96,7 +96,7 @@ export const HeroNavBar = () => {
           <div className="navLink-div">
             <NavLink to="/browse-posts" className="navlink">
               <li onClick={() => handleClick("Other")}>
-                <img src={other} alt="other" />
+                <img src={other} alt="image displaying three dots" />
                 Other
               </li>
             </NavLink>
@@ -104,7 +104,7 @@ export const HeroNavBar = () => {
           <div className="navLink-div" id="last">
             <NavLink to="/browse-posts" className="navlink">
               <li onClick={() => handleClick("All")}>
-                <img src={arrowright} alt="see-all" />
+                <img src={arrowright} alt="image of arrow pointing right" />
                 See all
               </li>
             </NavLink>
