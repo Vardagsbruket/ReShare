@@ -24,11 +24,7 @@ export const HeroNavBar = () => {
       <nav className="hero-navbar">
         <ul>
           <div className="navLink-div">
-            <NavLink
-              to="/browse-posts"
-              //   onClick={handleClickFurniture}
-              className="navlink"
-            >
+            <NavLink to="/browse-posts" className="navlink">
               <li onClick={() => handleClick("Furniture")}>
                 <img src={furniture} alt="image of sofa" /> Furniture
               </li>

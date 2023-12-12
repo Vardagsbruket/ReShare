@@ -26,10 +26,6 @@ export const CreatePost = () => {
   const cityList = useSelector((state) => state.posts.cityList);
   const [CreateNewPostSuccess, setCreateNewPostSuccess] = useState(false);
 
-  // const handleChange = (key, value) => {
-  //   setNewPost({ ...newPost, [key]: value });
-  // };
-
   const handleChange = (key, value) => {
     if (key === "createdDate") {
       setNewPost({ ...newPost, createdDate: value });
@@ -44,9 +40,6 @@ export const CreatePost = () => {
 
     handleChange("createdDate", currentDate);
 
-    // setNewPost((prev) => ({ ...prev, createdDate: currentDate }));
-
-    // setNewPost((prevState) => ({ ...prevState, ...initialState }));
     const createdPost = await dispatch(await createNewPost(newPost));
     dispatch(getPostsList());
     setCreateNewPostSuccess(true);
