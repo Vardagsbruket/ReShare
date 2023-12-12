@@ -139,7 +139,7 @@ export const DetailPage = () => {
                     <FacebookShareButton
                       url={`https://stirring-florentine-c4bb3f.netlify.app/post/${post._id}`}
                       className="facebook"
-                      aria-aria-label="facebook button"
+                      aria-label="facebook button"
                     >
                       <FacebookIcon size={32} round />
                     </FacebookShareButton>
