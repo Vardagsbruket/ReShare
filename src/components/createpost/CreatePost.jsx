@@ -5,7 +5,7 @@ import {
   setNewPostCreated,
   getPostsList,
   createNewPost,
-} from "../reducers/postSlice";
+} from "../../reducers/postSlice";
 import { useNavigate } from "react-router-dom";
 
 export const CreatePost = () => {

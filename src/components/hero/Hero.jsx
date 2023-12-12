@@ -1,4 +1,4 @@
-import { FilterCity } from "./FilterCity";
+import { FilterCity } from "../filter/FilterCity";
 import "./Hero.css";
 
 export const Hero = () => {

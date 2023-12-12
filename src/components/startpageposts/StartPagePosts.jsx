@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { CardPost } from "./CardPost";
-import "./Listposts.css";
+import { CardPost } from "../cardpost/CardPost";
+import "../listposts/Listposts.css";
 import "./StartPageListPosts.css";
 import { useEffect, useState } from "react";
 

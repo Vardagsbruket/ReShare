@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
 import "./CardPost.css";
-import clothes from "../assets/clothes_1x.webp";
-import furniture from "../assets/furniture_1x.webp";
-import garden from "../assets/garden_1x.webp";
-import kitchen from "../assets/kitchen_1x.webp";
-import other from "../assets/other_1x.webp";
-import sports from "../assets/sports_1x.webp";
-import tools from "../assets/tools_1x.webp";
-import vehicles from "../assets/vehicles_1x.webp";
-import interior from "../assets/interior_1x.webp";
-import toys from "../assets/toys_1x.webp";
-import available from "../assets/icons/available.svg";
-import giveaway from "../assets/icons/giveaway.svg";
-import needed from "../assets/icons/Needed.svg";
+import clothes from "../../assets/images/clothes_1x.webp";
+import furniture from "../../assets/images/furniture_1x.webp";
+import garden from "../../assets/images/garden_1x.webp";
+import kitchen from "../../assets/images/kitchen_1x.webp";
+import other from "../../assets/images/other_1x.webp";
+import sports from "../../assets/images/sports_1x.webp";
+import tools from "../../assets/images/tools_1x.webp";
+import vehicles from "../../assets/images/vehicles_1x.webp";
+import interior from "../../assets/images/interior_1x.webp";
+import toys from "../../assets/images/toys_1x.webp";
+import available from "../../assets/icons/available.svg";
+import giveaway from "../../assets/icons/giveaway.svg";
+import needed from "../../assets/icons/Needed.svg";
 
 export const CardPost = ({ post }) => {
   let imgPlaceHolder = "";
@@ -70,7 +70,7 @@ export const CardPost = ({ post }) => {
       <div className={`cardPost ${post.type}`}>
         <div>
           <Link to={`/post/${post._id}`}>
-            <img src={imgPlaceHolder} />
+            <img src={imgPlaceHolder} alt="placeHolder" />
             <div className="card-text">
               <h2 className="post-title">{post.postTitle}</h2>
               <h3 className="post-city">{post.city}</h3>

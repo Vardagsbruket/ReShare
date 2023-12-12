@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import { Hero } from "../components/Hero";
-import { StartPagePosts } from "../components/StartPagePosts";
-import { Loading } from "../components/Loading";
-import { HeroNavBar } from "../components/HeroNavBar";
+import { Hero } from "../components/hero/Hero";
+import { StartPagePosts } from "../components/startpageposts/StartPagePosts";
+import { Loading } from "../components/loading/Loading";
+import { HeroNavBar } from "../components/heronavbar/HeroNavBar";
 
 export const StartHomePage = () => {
   const isLoading = useSelector((state) => state.posts.isLoading);

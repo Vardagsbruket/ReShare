@@ -1,6 +1,6 @@
 import "./CreatePostBanner.css";
 import Lottie from "lottie-react";
-import Animation from "../assets/animations/Animation.json";
+import Animation from "../../assets/animations/Animation.json";
 export const CreatePostBanner = () => {
   const style = {
     height: 75,

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setCity } from "../reducers/postSlice";
+import { setCity } from "../../reducers/postSlice";
 import "./FilterPosts.css";
 
 export const FilterCity = () => {
