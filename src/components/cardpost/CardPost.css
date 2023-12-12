@@ -58,17 +58,17 @@
   color: #5299d3;
 }
 .Needed {
-  background-color: #cc58031a;
-  color: #cc5803;
+  background-color: #faefe6;
+  color: #b64d01;
 }
 .Needed a {
   text-decoration: none;
-  color: #cc5803;
+  color: #b64d01;
 }
 .Needed .card-text p,
 .Needed .card-text h2,
 .Needed .card-text h3 {
-  color: #cc5803;
+  color: #b64d01;
 }
 
 .post-title {

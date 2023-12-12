@@ -1,6 +1,6 @@
 import "./FilterPosts.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setCategory, setType } from "../reducers/postSlice";
+import { setCategory, setType } from "../../reducers/postSlice";
 import { FilterCity } from "./FilterCity";
 
 export const FilterPosts = () => {

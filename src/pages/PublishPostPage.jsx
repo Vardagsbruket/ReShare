@@ -1,4 +1,4 @@
-import { CreatePost } from "../components/CreatePost";
+import { CreatePost } from "../components/createpost/CreatePost";
 
 export const PublishPostPage = () => {
   return (

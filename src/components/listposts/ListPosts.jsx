@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import { CardPost } from "./CardPost";
+import { CardPost } from "../cardpost/CardPost";
 import { useEffect, useState } from "react";
 import "./Listposts.css";
-import { Loading } from "./Loading";
+import { Loading } from "../loading/Loading";
 
 export const ListPosts = () => {
   const [filteredPosts, setFilteredPosts] = useState([]);

@@ -1,7 +1,7 @@
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import Menu from "../assets/icons/menu-icon.svg";
+import Menu from "../../assets/icons/menu-icon.svg";
 
 export const Header = () => {
   const [showNavigation, setShowNavigation] = useState(false);

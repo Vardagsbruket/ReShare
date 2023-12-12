@@ -3,20 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import "./DetailPage.css";
 import { useEffect, useState } from "react";
-import { Loading } from "../components/Loading";
-import { CreatePostBanner } from "../components/CreatePostBanner";
+import { Loading } from "../components/loading/Loading";
+import { CreatePostBanner } from "../components/createpostbanner/CreatePostBanner";
 import { setNewPostCreated } from "../reducers/postSlice";
 
-import clothes from "../assets/clothes_1x.webp";
-import furniture from "../assets/furniture_1x.webp";
-import garden from "../assets/garden_1x.webp";
-import kitchen from "../assets/kitchen_1x.webp";
-import other from "../assets/other_1x.webp";
-import sports from "../assets/sports_1x.webp";
-import tools from "../assets/tools_1x.webp";
-import vehicles from "../assets/vehicles_1x.webp";
-import interior from "../assets/interior_1x.webp";
-import toys from "../assets/toys_1x.webp";
+import clothes from "../assets/images/clothes_1x.webp";
+import furniture from "../assets/images/furniture_1x.webp";
+import garden from "../assets/images/garden_1x.webp";
+import kitchen from "../assets/images/kitchen_1x.webp";
+import other from "../assets/images/other_1x.webp";
+import sports from "../assets/images/sports_1x.webp";
+import tools from "../assets/images/tools_1x.webp";
+import vehicles from "../assets/images/vehicles_1x.webp";
+import interior from "../assets/images/interior_1x.webp";
+import toys from "../assets/images/toys_1x.webp";
 import available from "../assets/icons/available.svg";
 import giveaway from "../assets/icons/giveaway.svg";
 import needed from "../assets/icons/Needed.svg";
@@ -139,6 +139,7 @@ export const DetailPage = () => {
                     <FacebookShareButton
                       url={`https://stirring-florentine-c4bb3f.netlify.app/post/${post._id}`}
                       className="facebook"
+                      aria-aria-label="facebook button"
                     >
                       <FacebookIcon size={32} round />
                     </FacebookShareButton>
