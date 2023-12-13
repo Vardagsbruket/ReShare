@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   max-width: 1280px;
+  justify-content: center;
 }
 .startpage-list-post-container .cardPost:nth-child(1),
 .startpage-list-post-container .cardPost:nth-child(2),
