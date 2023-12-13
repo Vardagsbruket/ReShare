@@ -31,7 +31,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
   .startpage-list-post-container .cardPost:nth-child(1),
   .startpage-list-post-container .cardPost:nth-child(2),
   .startpage-list-post-container .cardPost:nth-child(3) {
