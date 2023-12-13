@@ -23,88 +23,133 @@ export const HeroNavBar = () => {
     <section className="hero-navbar-container">
       <nav className="hero-navbar">
         <ul>
-          <div className="navLink-div">
-            <NavLink to="/browse-posts" className="navlink">
-              <li onClick={() => handleClick("Furniture")}>
-                <img src={furniture} alt="image of sofa" /> Furniture
-              </li>
-            </NavLink>
-          </div>
-          <div className="navLink-div">
-            <NavLink to="/browse-posts" className="navlink">
-              <li onClick={() => handleClick("Vehicles")}>
+          <li>
+            <div className="navLink-div">
+              <NavLink
+                to="/browse-posts"
+                className="navlink"
+                onClick={() => handleClick("Furniture")}
+              >
+                <img src={furniture} alt="image of sofa" />{" "}
+                <span>Furniture</span>
+              </NavLink>
+            </div>
+          </li>
+          <li>
+            <div className="navLink-div">
+              <NavLink
+                to="/browse-posts"
+                className="navlink"
+                onClick={() => handleClick("Vehicles")}
+              >
                 <img src={vehicles} alt="image of car" />
-                Vehicles
-              </li>
-            </NavLink>
-          </div>
-          <div className="navLink-div">
-            <NavLink to="/browse-posts" className="navlink">
-              <li onClick={() => handleClick("Clothes & shoes")}>
+                <span>Vehicles</span>
+              </NavLink>
+            </div>
+          </li>
+          <li>
+            <div className="navLink-div">
+              <NavLink
+                to="/browse-posts"
+                className="navlink"
+                onClick={() => handleClick("Clothes & shoes")}
+              >
                 <img src={clothes} alt="image of sweater" />
                 Clothes & <br />
                 Shoes
-              </li>
-            </NavLink>
-          </div>
-          <div className="navLink-div">
-            <NavLink to="/browse-posts" className="navlink">
-              <li onClick={() => handleClick("Tools & machines")}>
+              </NavLink>
+            </div>
+          </li>
+          <li>
+            <div className="navLink-div">
+              <NavLink
+                to="/browse-posts"
+                className="navlink"
+                onClick={() => handleClick("Tools & machines")}
+              >
                 <img src={tools} alt="image of screwdriver" />
-                Tools & <br />
-                machines
-              </li>
-            </NavLink>
-          </div>
-          <div className="navLink-div">
-            <NavLink to="/browse-posts" className="navlink">
-              <li onClick={() => handleClick("Interior")}>
+                <span>
+                  Tools & <br />
+                  machines
+                </span>
+              </NavLink>
+            </div>
+          </li>
+          <li>
+            <div className="navLink-div">
+              <NavLink
+                to="/browse-posts"
+                className="navlink"
+                onClick={() => handleClick("Interior")}
+              >
                 <img src={interior} alt="image of house" />
-                Interior
-              </li>
-            </NavLink>
-          </div>
-          <div className="navLink-div">
-            <NavLink to="/browse-posts" className="navlink">
-              <li onClick={() => handleClick("Sports & hobby")}>
+                <span>Interior</span>
+              </NavLink>
+            </div>
+          </li>
+          <li>
+            <div className="navLink-div">
+              <NavLink
+                to="/browse-posts"
+                className="navlink"
+                onClick={() => handleClick("Sports & hobby")}
+              >
                 <img src={sports} alt="image of football" />
-                Sports & <br />
-                Hobby
-              </li>
-            </NavLink>
-          </div>
-          <div className="navLink-div">
-            <NavLink to="/browse-posts" className="navlink">
-              <li onClick={() => handleClick("Kitchen appliances")}>
+                <span>
+                  Sports & <br />
+                  Hobby
+                </span>
+              </NavLink>
+            </div>
+          </li>
+          <li>
+            <div className="navLink-div">
+              <NavLink
+                to="/browse-posts"
+                className="navlink"
+                onClick={() => handleClick("Kitchen appliances")}
+              >
                 <img src={kitchen} alt="image of plate and fork" />
-                Kitchen
-              </li>
-            </NavLink>
-          </div>
-          <div className="navLink-div">
-            <NavLink to="/browse-posts" className="navlink">
-              <li onClick={() => handleClick("Garden")}>
+                <span> Kitchen</span>
+              </NavLink>
+            </div>
+          </li>
+          <li>
+            <div className="navLink-div">
+              <NavLink
+                to="/browse-posts"
+                className="navlink"
+                onClick={() => handleClick("Garden")}
+              >
                 <img src={garden} alt="image of flower" />
-                Garden
-              </li>
-            </NavLink>
-          </div>
-          <div className="navLink-div">
-            <NavLink to="/browse-posts" className="navlink">
-              <li onClick={() => handleClick("Other")}>
+                <span>Garden</span>
+              </NavLink>
+            </div>
+          </li>
+          <li>
+            <div className="navLink-div">
+              <NavLink
+                to="/browse-posts"
+                className="navlink"
+                onClick={() => handleClick("Other")}
+              >
                 <img src={other} alt="image displaying three dots" />
-                Other
-              </li>
-            </NavLink>
-          </div>
-          <div className="navLink-div" id="last">
-            <NavLink to="/browse-posts" className="navlink">
-              <li onClick={() => handleClick("All")}>
+                <span> Other </span>
+              </NavLink>
+            </div>
+          </li>
+          <li id="last">
+            <div className="navLink-div">
+              <NavLink
+                to="/browse-posts"
+                className="navlink"
+                onClick={() => handleClick("All")}
+              >
                 <img src={arrowright} alt="image of arrow pointing right" />
-                See all
-              </li>
-            </NavLink>
-          </div>
+                <span> See all </span>
+              </NavLink>
+            </div>
+          </li>
         </ul>
       </nav>
     </section>

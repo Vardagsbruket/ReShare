@@ -21,7 +21,7 @@
   max-width: 100%;
   width: 100%;
 }
-.hero-navbar li {
+.hero-navbar .navLink {
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
@@ -33,10 +33,18 @@
   align-items: center;
   margin: 0;
 }
+.hero-navbar li {
+  border-right: 1px solid #214720;
+  height: 100%;
+}
 .hero-navbar .navlink {
   text-decoration: none;
   color: #214720;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .navLink-div {
   display: flex;
@@ -44,8 +52,6 @@
   align-content: center;
   min-width: fit-content;
   padding: 0px 25px;
-  border-right: 1px solid #214720;
-  height: 100%;
 }
 
 #last {
